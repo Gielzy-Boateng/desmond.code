@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -18,4 +22,36 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
+
+.body {
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.header {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* .header {
+  font-family: "Rubik Vinyl", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* .header {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+} */
