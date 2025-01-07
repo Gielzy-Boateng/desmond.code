@@ -7,16 +7,17 @@ export default function Footer() {
   const currentDate = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
       <WidthConstraint>
         <section className="flex flex-col items-center justify-center mt-10 space-y-5 mb-5">
           <div>
             <Link href="/">
               <Image
-                src="/logo-brand.svg"
+                src="/footer-brand.svg"
                 width={350}
                 height={350}
                 alt="Brand"
+                className=""
               />
             </Link>
           </div>

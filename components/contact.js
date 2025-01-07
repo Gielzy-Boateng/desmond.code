@@ -5,7 +5,7 @@ import { PhoneCall } from "lucide-react";
 
 export default function Contact() {
   return (
-    <WidthConstraint className="flex flex-col lg:flex-row items-center justify-center space-y-10 lg:space-y-0 lg:space-x-10 mt-10">
+    <WidthConstraint className="my-20 lg:my-28 flex flex-col lg:flex-row items-center justify-center space-y-10 lg:space-y-0 lg:space-x-10">
       <div>
         <Image
           src="/homepage/electronics.svg"
@@ -15,7 +15,7 @@ export default function Contact() {
         />
       </div>
       <div className="flex flex-col max-w-[600px] text-xl gap-y-10 lg:gap-y-3">
-        <p className="text-center">
+        <p className="text-center lg:text-start">
           From building powerful applications to solving complex challenges, I
           help businesses and individuals create cutting-edge solutions.
           Let&apos;s connect—whether for collaboration, consulting, or simply

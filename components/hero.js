@@ -32,8 +32,8 @@ export default function Hero() {
             mobile experiences, turning ideas into reality with clean, efficient
             code. Let&apos;s create something amazing together!
           </p>
-          <button className=" hidden lg:block mt-5 px-8 py-3 rounded-xl text-nowrap bg-[#38126D]">
-            Let&apos;s get started 👉
+          <button className="hidden hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300 lg:block mt-5 text-nowrap bg-[#38126D]">
+            Let&apos;s get started&nbsp; <Mail className="inline size-6" />
           </button>
         </div>
 
