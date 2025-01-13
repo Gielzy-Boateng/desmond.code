@@ -5,6 +5,8 @@ import Link from "next/link";
 
 export default function Footer() {
   const currentDate = new Date().getFullYear();
+  // const whatsappLink =
+  //   "https://wa.me/233571991014?text=Hello%20Desmond%2C%20I%20want%20you%20to%20build%20something%20cool%20for%20me";
 
   return (
     // <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
@@ -24,9 +26,9 @@ export default function Footer() {
           </div>
           <div className="flex items-center justify-center space-x-6">
             {links.map((link, i) => (
-              <div key={i}>
+              <Link href={link.url} target="_blank" key={i}>
                 <Image src={link.icon} width={30} height={30} alt={link.name} />
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -35,7 +37,7 @@ export default function Footer() {
           <p>Copyright &copy; {currentDate} </p>
           <Link href="tel:+233571991014">Call Us Now : +233 571991014</Link>
           <p>
-            <Link href="/">Designed by desmond.code</Link>
+            <Link href="desmond-code.vercel.app">Designed by desmond.code</Link>
           </p>
         </div>
       </WidthConstraint>
