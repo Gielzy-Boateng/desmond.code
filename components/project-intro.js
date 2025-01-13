@@ -27,11 +27,7 @@ export default function ProjectIntro() {
           projectImage="/homepage/pic-1.png"
           projectLink="https://wedey-site.vercel.app/"
           projectTitle="WEDEY FARMS"
-          projectDescription="A web app for visualizing personalized Spotify data. View your
-                  top artists, top tracks, recently played tracks, and detailed
-                  audio information about each track. Create and save new
-                  playlists of recommended tracks based on your existing
-                  playlists and more."
+          projectDescription="Wedey Farms is dedicated to producing fresh, high-quality crops and livestock through sustainable farming practices. With a strong focus on innovation, eco-friendly methods, and advanced techniques, it supports local communities, promotes healthy living, and ensures a greener future for all."
         />
 
         <div className="flex items-center justify-center">
