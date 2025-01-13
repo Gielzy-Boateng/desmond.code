@@ -40,8 +40,8 @@ export default function Hero() {
         <div className="flex flex-col gap-y-5 lg:block lg:gap-y-0">
           <Image
             src="/homepage/hero-4.png"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             alt="Nana"
             className=""
             priority
