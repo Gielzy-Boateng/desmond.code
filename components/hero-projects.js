@@ -7,7 +7,7 @@ export default function HeroProjects() {
     <WidthConstraint className="">
       <div className="flex flex-col items-center justify-center">
         <Image
-          src={"/homepage/skills.svg"}
+          src={"/homepage/skills.png"}
           width={700}
           height={700}
           alt="Skills"

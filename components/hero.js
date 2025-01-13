@@ -7,16 +7,16 @@ export default function Hero() {
   return (
     <div className="">
       <WidthConstraint className="flex flex-col lg:flex-row items-center justify-between space-y-20 lg:space-x-5">
-        <div className="absolute -translate-y-32 lg:-translate-y-10">
+        {/* <div className="absolute -translate-y-20 lg:-translate-y-10">
           <Image
-            src="/homepage/bulb-2.jpg"
+            src="/homepage/new-bulb.png"
             width={300}
             height={300}
             alt="Nana"
             className=""
           />
-        </div>
-        <div className="mt-20 relative max-w-[600px] text-xl flex flex-col ">
+        </div> */}
+        <div className="mt-20 max-w-[550px] text-xl flex flex-col ">
           <h1 className="header text-center lg:text-start ">
             &ldquo;Hello WORLD 👋 &rdquo;{" "}
           </h1>
@@ -39,11 +39,12 @@ export default function Hero() {
 
         <div className="flex flex-col gap-y-5 lg:block lg:gap-y-0">
           <Image
-            src="/homepage/me-4.svg"
+            src="/homepage/hero-4.png"
             width={500}
             height={500}
             alt="Nana"
             className=""
+            priority
           />
           <button className="lg:hidden font-semibold mt-5 text-nowrap bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300">
             Let&apos;s get started&nbsp; <Mail className="inline size-6" />

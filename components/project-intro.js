@@ -20,11 +20,11 @@ export default function ProjectIntro() {
                 monitor your fleet's performance, ensure on-time arrivals,
                 and optimize routes for efficiency."
           projectLink="https://www.vansandtruckers.com/"
-          projectImage="/homepage/group1.svg"
+          projectImage="/homepage/pic-5.png"
         />
 
         <EvenProject
-          projectImage="/homepage/group2.svg"
+          projectImage="/homepage/pic-1.png"
           projectLink="https://wedey-site.vercel.app/"
           projectTitle="WEDEY FARMS"
           projectDescription="A web app for visualizing personalized Spotify data. View your

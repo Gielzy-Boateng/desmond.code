@@ -18,6 +18,7 @@ export default function EvenProject({
             height={500}
             alt="p-31"
             className="rounded-3xl"
+            priority
           />
 
           <span

@@ -8,10 +8,11 @@ export default function Contact() {
     <WidthConstraint className="my-20 lg:my-28 flex flex-col lg:flex-row items-center justify-center space-y-10 lg:space-y-0 lg:space-x-10">
       <div>
         <Image
-          src="/homepage/electronics.svg"
+          src="/homepage/electronics.png"
           width={300}
           height={300}
           alt="Electronics"
+          priority
         />
       </div>
       <div className="flex flex-col max-w-[600px] text-xl gap-y-10 lg:gap-y-3">

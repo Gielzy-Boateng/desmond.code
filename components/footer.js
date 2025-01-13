@@ -7,13 +7,14 @@ export default function Footer() {
   const currentDate = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
+    // <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
+    <footer className="bg-black">
       <WidthConstraint>
         <section className="flex flex-col items-center justify-center mt-10 space-y-5 mb-5">
           <div>
             <Link href="/">
               <Image
-                src="/footer-brand.svg"
+                src="/juizy-footer.png"
                 width={350}
                 height={350}
                 alt="Brand"

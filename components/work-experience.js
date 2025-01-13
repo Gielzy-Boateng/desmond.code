@@ -27,6 +27,7 @@ export default function WorkExperience() {
                     height={100}
                     alt={work.title}
                     className=""
+                    priority
                   />
                 </span>
                 <div>

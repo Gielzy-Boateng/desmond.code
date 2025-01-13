@@ -37,6 +37,7 @@ export default function OddProject({
               height={500}
               alt="p-31"
               className="rounded-3xl"
+              priority
             />
             <span
               className="absolute inset-0 -z-10 lg:-translate-y-28 lg:translate-x-[7rem] h-[300px] lg:max-h-[430px] xl:-translate-y-24 xl:translate-x-[10rem] "

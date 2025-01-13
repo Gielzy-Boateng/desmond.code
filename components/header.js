@@ -5,16 +5,17 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="bg-black p-1 shadow-lg fixed top-0 left-0 right-0 z-40 border-b-2 border-[#1A0B2E]">
+    <div className=" p-1 shadow-lg fixed top-0 left-0 right-0 z-40 bg-[#1A0B2E] border-b-2 border-[#1A0B2E]">
       <WidthConstraint className="flex items-center justify-between ">
         <div>
           <Link href="/">
             <Image
-              src="/logo-brand.svg"
-              width={150}
-              height={150}
+              src="/brand-logo.png"
+              width={100}
+              height={100}
               alt="My Logo"
               className="rounded-full"
+              priority
             />
           </Link>
         </div>
