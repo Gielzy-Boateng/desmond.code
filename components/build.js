@@ -4,7 +4,14 @@ export default function Build() {
   return (
     <div className="mt-20 flex flex-col items-center justify-center gap-y-10">
       <div>
-        <video width="200" autoPlay loop muted className="rounded-full">
+        <video
+          width="200"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="rounded-full"
+        >
           <source src="/about/connect-new.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
