@@ -35,7 +35,7 @@ export const workExperience = [
   {
     title: "Frontend Developer",
     company: "Tech Solutions Co.",
-    icon: "/homepage/icon-3.png",
+    icon: "/homepage/icon-4.png",
     responsibilities: [
       "Designed responsive user interfaces, improving accessibility and customer retention.",
       "Optimized web performance, reducing load times by 40%.",
@@ -44,7 +44,8 @@ export const workExperience = [
   {
     title: "Backend Developer Intern",
     company: "CodeWorks Labs",
-    icon: "/homepage/icon-4.png",
+
+    icon: "/homepage/icon-3.png",
     responsibilities: [
       "Developed and maintained APIs, enhancing system performance by 30%.",
       "Assisted in database optimization, reducing query execution times.",
