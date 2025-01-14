@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased overflow-x-hidden bg-[#1A0B2E] scroll-smooth  text-white`}
+        className={` antialiased overflow-x-hidden bg-[#1A0B2E] scroll-smooth  text-white`}
       >
         <Header />
         {children}

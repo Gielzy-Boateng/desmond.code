@@ -44,6 +44,25 @@ export default function Projects() {
             for clients just like you.
           </p>
         </div>
+
+        <OddProject
+          projectTitle="VANS AND TRUCKERS"
+          projectDescription="A logistics platform designed to simplify freight management.
+                Track shipments, schedule deliveries, and access real-time
+                updates. Streamline your transportation process with tools to
+                monitor your fleet's performance, ensure on-time arrivals,
+                and optimize routes for efficiency."
+          projectLink="https://www.vansandtruckers.com/"
+          projectImage="/homepage/pic-5.png"
+        />
+
+        <EvenProject
+          projectImage="/homepage/pic-1.png"
+          projectLink="https://wedey-site.vercel.app/"
+          projectTitle="WEDEY FARMS"
+          projectDescription="Wedey Farms is dedicated to producing fresh, high-quality crops and livestock through sustainable farming practices. With a strong focus on innovation, eco-friendly methods, and advanced techniques, it supports local communities, promotes healthy living, and ensures a greener future for all."
+        />
+
         <OddProject
           projectImage="/homepage/pic-3.png"
           projectDescription="A website designed for showcasing Fifth Avenue Luxury Apartments, featuring modern layouts, detailed property listings, and high-quality visuals. Built to provide users with a seamless experience for exploring premium apartments, booking viewings, and contacting management."

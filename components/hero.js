@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import WidthConstraint from "./width-constraint";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
             className=""
           />
         </div> */}
-        <div className="mt-20 max-w-[550px] text-xl flex flex-col ">
+        <div className="mt-5 max-w-[550px] text-xl flex flex-col ">
           <h1 className="header text-center lg:text-start ">
             &ldquo;Hello WORLD 👋 &rdquo;{" "}
           </h1>
@@ -46,9 +47,15 @@ export default function Hero() {
             className=""
             priority
           />
-          <button className="lg:hidden font-semibold mt-5 text-nowrap bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300">
-            Let&apos;s get started&nbsp; <Mail className="inline size-6" />
-          </button>
+          <Link
+            href={"/about"}
+            className="lg:hidden font-semibold mt-5 text-nowrap bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300"
+          >
+            <p className="text-center">
+              {" "}
+              Let&apos;s get started&nbsp; <Mail className="inline size-6" />
+            </p>
+          </Link>
         </div>
       </WidthConstraint>
     </div>
