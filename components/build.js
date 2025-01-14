@@ -10,6 +10,7 @@ export default function Build() {
           loop
           muted
           playsInline
+          controls={false}
           className="rounded-full"
         >
           <source src="/about/connect-new.mp4" type="video/mp4" />
