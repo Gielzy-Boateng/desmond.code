@@ -35,7 +35,7 @@ export const workExperience = [
   {
     title: "Frontend Developer",
     company: "Tech Solutions Co.",
-    icon: "/homepage/icon-4.png",
+    icon: "/homepage/icon-1.png",
     responsibilities: [
       "Designed responsive user interfaces, improving accessibility and customer retention.",
       "Optimized web performance, reducing load times by 40%.",
