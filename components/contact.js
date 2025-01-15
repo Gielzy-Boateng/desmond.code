@@ -26,7 +26,7 @@ export default function Contact() {
         </p>
         <Link href="/" className="">
           <p className="bg-[#38126D] text-center hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300">
-            Contact Us&nbsp;&nbsp;
+            Contact Me&nbsp;&nbsp;
             <PhoneCall className="inline" />
           </p>
         </Link>

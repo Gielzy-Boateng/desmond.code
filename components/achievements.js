@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Achievements() {
   return (
     <div className="flex flex-col items-center gap-y-10">
       <div>
-        <video
+        {/* <video
           width="200"
           autoPlay
           loop
@@ -14,8 +15,16 @@ export default function Achievements() {
         >
           <source src="/about/illusion.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
+        <Image
+          src="/about/gold-3.jpg"
+          width={200}
+          height={200}
+          alt="Gold"
+          className="rounded-full"
+        />
       </div>
+
       <div className="space-y-2">
         <p className=" font-bold text-center  leading-[1.4]">
           Some of my proudest achievements include building and deploying
