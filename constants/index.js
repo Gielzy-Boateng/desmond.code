@@ -1,4 +1,4 @@
-export const NavLinks = [
+export const navLinks = [
   {
     name: "✌️About",
     link: "/about",

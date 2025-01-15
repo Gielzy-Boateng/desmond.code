@@ -1,7 +1,8 @@
 import Image from "next/image";
 import WidthConstraint from "./width-constraint";
-import { NavLinks } from "@/constants";
+import { navLinks } from "@/constants";
 import Link from "next/link";
+import MobileNavBar from "./mobile-navbar";
 
 export default function Header() {
   return (
@@ -20,7 +21,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-x-10 bg-white py-5 px-5 hover:px-20 font-semibold text-black rounded-full transition-all duration-300 ">
-          {NavLinks.map((nav, i) => (
+          {navLinks.map((nav, i) => (
             <Link
               key={nav.name}
               href={nav.link}
@@ -30,6 +31,8 @@ export default function Header() {
             </Link>
           ))}
         </div>
+
+        <MobileNavBar />
       </WidthConstraint>
     </div>
   );
