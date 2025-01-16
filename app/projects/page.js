@@ -97,7 +97,7 @@ export default function Projects() {
           projectImage="/homepage/pic-8.png"
           projectDescription="A website crafted for Authentic Phones Technic, highlighting their expertise in phone repair and maintenance. Designed with user-friendly navigation, it offers detailed service listings, appointment booking features, and insights into their commitment to quality and customer satisfaction."
           projectLink="https://authentic-phones-technique.vercel.app/"
-          projectTitle="AUTHENTIC PHONES TECHNIQUE"
+          projectTitle="AUTHENTIC PHONES"
         />
         <OddProject
           projectImage="/homepage/pic-11.png"
