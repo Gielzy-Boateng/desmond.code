@@ -48,7 +48,7 @@ export default function Hero() {
             priority
           />
           <Link
-            href={"/about"}
+            href={"/contact"}
             className="lg:hidden font-semibold mt-5 text-nowrap bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300"
           >
             <p className="text-center">

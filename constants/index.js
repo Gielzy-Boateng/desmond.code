@@ -8,7 +8,7 @@ export const navLinks = [
     link: "/projects",
   },
   {
-    name: "Reach Us 🤙",
+    name: "Contact Me 🤙",
     link: "/contact",
   },
 ];

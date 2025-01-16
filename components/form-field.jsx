@@ -9,6 +9,7 @@ export default function FormField() {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
 
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
@@ -25,7 +26,7 @@ export default function FormField() {
 
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "1331421a-1386-46a5-ba89-6f8a563c6c8e");
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -43,7 +44,7 @@ export default function FormField() {
       if (result.success) {
         // .log(result);
         setMessage(
-          "Thank you for sending us your message. We will get in touch with you."
+          "Thank you for sending me your message. I will get in touch with you."
         );
       } else {
         setMessage("Form Submission failed. Please try again.");
@@ -57,7 +58,7 @@ export default function FormField() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+    <form onSubmit={handleSubmit} className="space-y-5 relative z-10 mt-20">
       <input
         type="text"
         value={name}
@@ -74,6 +75,15 @@ export default function FormField() {
         className="w-full placeholder:text-[#2F9AC9] p-4 rounded-xl font-medium outline-none  text-[14px] focus:ring-offset-2 text-stone-900 "
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="tel"
+        placeholder="Contact"
+        name="tel"
+        className="w-full placeholder:text-[#2F9AC9] p-4 rounded-xl font-medium outline-none  text-[14px] focus:ring-offset-2 text-stone-900 "
+        value={contact}
+        onChange={(e) => setContact(e.target.value)}
         required
       />
       <textarea
@@ -98,11 +108,11 @@ export default function FormField() {
       </button>
 
       {message && (
-        <div className="absolute inset-0 bg-gray-300 rounded-xl bg-opacity-90 w-full text-stone-800 font-semibold h-full -translate-y-5 flex flex-col items-center justify-center space-y-2 ">
+        <div className="absolute inset-0 bg-gray-300 rounded-xl bg-opacity-90 w-full  text-[#B336FF] font-semibold h-full -translate-y-5 flex flex-col items-center justify-center space-y-2 ">
           <p className="p-2 text-center text-[20px]">{message}</p>
           <Link
             href="/"
-            className="bg-[#2F9AC9] py-2 px-4 rounded-full text-white text-base"
+            className="bg-[#B336FF] py-2 px-4 rounded-full text-white text-base"
           >
             Go back to Home
           </Link>
