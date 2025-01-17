@@ -26,7 +26,7 @@ export default function Achievements() {
       </div>
 
       <div className="space-y-2">
-        <p className=" font-bold text-center  leading-[1.4]">
+        <p className=" font-bold text-center text-[#FFD700]  leading-[1.4]">
           Some of my proudest achievements include building and deploying
           multiple websites and apps, such as;
         </p>

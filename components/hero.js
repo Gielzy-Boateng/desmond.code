@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
           <h2 className="text-center lg:text-start">
             I AM{" "}
-            <span className="header text-[#B336FF] text-2xl">
+            <span className="header text-[#FFD700] text-2xl">
               DESMOND NANA BOATENG
             </span>
           </h2>
@@ -40,7 +40,7 @@ export default function Hero() {
 
         <div className="flex flex-col gap-y-5 lg:block lg:gap-y-0">
           <Image
-            src="/homepage/hero-4.png"
+            src="/homepage/new-me.png"
             width={400}
             height={400}
             alt="Nana"

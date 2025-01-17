@@ -24,10 +24,10 @@ export default function Contact() {
           <br className="" /> You&apos;ve made it—finally, the ticking clock
           says it&apos;s time to make your move! ⏳
         </h1>
-        <p className="text-center  text-[#B336FF]">
+        <p className="text-center  text-[#FFD700]">
           Got a project, an idea, or want to hire Me?
         </p>
-        <p className="text-center  text-[#B336FF]">
+        <p className="text-center  text-[#FFD700]">
           Don&apos;t wait too long—let&apos;s connect and make something
           incredible happen!
         </p>

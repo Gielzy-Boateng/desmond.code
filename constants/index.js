@@ -1,14 +1,14 @@
 export const navLinks = [
   {
-    name: "✌️About",
+    name: "About  ✌️",
     link: "/about",
   },
   {
-    name: "🧑‍💻 Projects",
+    name: "Projects  🧑‍💻",
     link: "/projects",
   },
   {
-    name: "Contact Me 🤙",
+    name: "Contact Me  🤙",
     link: "/contact",
   },
 ];

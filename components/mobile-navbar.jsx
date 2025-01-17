@@ -109,16 +109,11 @@ export default function MobileNavBar() {
                         borderBottomColor: "#2F9AFF",
                       }}
                       transition={{ duration: 0.2 }}
-                      className="list-none border-b w-full pb-2 text-[16px]"
+                      className="list-none border-b flex hover:bg-[#38126D] hover:text-white hover:py-2 hover:px-4 rounded-full w-full pb-2 text-[18px]"
                       key={i}
+                      onClick={handleNav}
                     >
-                      <button
-                        className={`
-                          
-                            "hover:border-b-2 border-[#2F9AFF] hover:text-[#2F9AFF] "
-                          `}
-                        onClick={handleNav}
-                      >
+                      <button className="hover:border-b-2 flex border-[#2F9AFF] hover:text-[#2F9AFF] ">
                         {nav.name}
                       </button>
                     </motion.li>

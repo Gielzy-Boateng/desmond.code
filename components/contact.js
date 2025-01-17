@@ -24,7 +24,7 @@ export default function Contact() {
           out through any of the channels below, and let&apos;s make something
           extraordinary happen.
         </p>
-        <Link href="/" className="">
+        <Link href="/contact" className="">
           <p className="bg-[#38126D] text-center hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300">
             Contact Me&nbsp;&nbsp;
             <PhoneCall className="inline" />

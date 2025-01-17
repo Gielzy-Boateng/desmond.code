@@ -7,7 +7,7 @@ import Achievements from "@/components/achievements";
 export default function About() {
   return (
     <WidthConstraint className="mt-28 text-xl gap-y-10 py-44 flex flex-col items-center justify-center ">
-      <Image src="/about/about-me.png" width={300} height={300} alt="Me" />
+      <Image src="/homepage/new-me.png" width={300} height={300} alt="Me" />
       <p className="tracking-wide text-center lg:text-start leading-[1.4]">
         Hello, I&apos;m Desmond Nana Boateng, a passionate self-taught software
         engineer with a background in science turned tech enthusiast. My journey

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import Spinner from "./Spinner";
 
@@ -14,12 +14,11 @@ export default function FormField() {
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
 
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   async function handleSubmit(event) {
     event.preventDefault();
     setIsSending(true);
-
     setEmail("");
     setName("");
     setText("");
@@ -87,11 +86,7 @@ export default function FormField() {
         required
       />
       <textarea
-        placeholder={`${
-          pathname === "/get-hired"
-            ? "Tell us about your driving qualifications"
-            : "Write a message"
-        }`}
+        placeholder="Write a message"
         className="w-full h-[130px] placeholder:text-[#2F9AC9] resize-none p-4 rounded-xl font-medium outline-none text-[14px] focus:ring-offset-2 text-stone-900"
         value={text}
         name="message"
@@ -102,13 +97,13 @@ export default function FormField() {
         disabled={!email || isSending || message}
         className={`${
           !email ? "cursor-not-allowed" : "cursor-pointer"
-        } w-full bg-[#2F9AC9] text-white hover:bg-black py-2 transition-all duration-200 rounded-xl`}
+        } w-full bg-[#38126D] text-white hover:bg-black py-2 transition-all duration-200 rounded-xl`}
       >
-        {isSending ? <Spinner /> : "Send"}
+        {isSending ? <Spinner /> : "Submit"}
       </button>
 
       {message && (
-        <div className="absolute inset-0 bg-gray-300 rounded-xl bg-opacity-90 w-full  text-[#B336FF] font-semibold h-full -translate-y-5 flex flex-col items-center justify-center space-y-2 ">
+        <div className="absolute inset-0 bg-gray-300 rounded-xl bg-opacity-90 w-full  text-[#38126D] font-semibold h-full -translate-y-5 flex flex-col items-center justify-center space-y-2 ">
           <p className="p-2 text-center text-[20px]">{message}</p>
           <Link
             href="/"
