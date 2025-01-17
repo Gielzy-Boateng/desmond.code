@@ -13,6 +13,7 @@ export default function Contact() {
             muted
             playsInline
             controls={false}
+            preload="auto"
             className="rounded-full"
           >
             <source src="/contact/time.mp4" type="video/mp4" />

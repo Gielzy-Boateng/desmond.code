@@ -10,6 +10,7 @@ export default function Build() {
           loop
           muted
           playsInline
+          preload="auto"
           controls={false}
           className="rounded-full"
         >

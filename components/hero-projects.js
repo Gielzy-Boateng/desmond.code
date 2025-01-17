@@ -11,6 +11,7 @@ export default function HeroProjects() {
           width={700}
           height={700}
           alt="Skills"
+          priority
         />
       </div>
       <ProjectIntro />
