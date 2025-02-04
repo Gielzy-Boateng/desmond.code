@@ -2,11 +2,19 @@ import { links } from "@/constants";
 import Image from "next/image";
 import WidthConstraint from "./width-constraint";
 import Link from "next/link";
+// import { useEffect, useState } from "react";
 
 export default function Footer() {
   const currentDate = new Date().getFullYear();
-  // const whatsappLink =
-  //   "https://wa.me/233571991014?text=Hello%20Desmond%2C%20I%20want%20you%20to%20build%20something%20cool%20for%20me";
+
+  // const [enableAOS, setEnableAOS] = useState(false);
+
+  // useEffect(() => {
+  //   // Check screen width and update state
+  //   if (window.innerWidth < 768) {
+  //     setEnableAOS(true);
+  //   }
+  // }, []);
 
   return (
     // <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
@@ -39,8 +47,8 @@ export default function Footer() {
           <div className="flex items-center justify-center space-x-6">
             {links.map((link, i) => (
               <Link
-                data-aos="fade-right"
-                data-aos-delay={link.delay}
+                // data-aos={enableAOS ? "fade-up" : undefined}
+                // data-aos-delay={enableAOS ? link.delay : undefined}
                 href={link.url}
                 target="_blank"
                 key={i}
