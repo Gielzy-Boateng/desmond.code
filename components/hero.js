@@ -39,9 +39,14 @@ export default function Hero() {
             mobile experiences, turning ideas into reality with clean, efficient
             code. Let&apos;s create something amazing together!
           </p>
-          <button className="hidden hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300 lg:block mt-5 text-nowrap bg-[#38126D]">
-            Let&apos;s get started&nbsp; <Mail className="inline size-6" />
-          </button>
+          <Link
+            href="/contact"
+            className="hidden hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300 lg:block mt-5 text-nowrap bg-[#38126D]"
+          >
+            <p className="text-center">
+              Let&apos;s get started&nbsp; <Mail className="inline size-6" />
+            </p>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-y-5 lg:block lg:gap-y-0">
