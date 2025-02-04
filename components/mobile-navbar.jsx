@@ -95,7 +95,7 @@ export default function MobileNavBar() {
               </button>
             </div>
             <div className="flex flex-col  items-start   justify-start px-4 ">
-              <ul className="flex flex-col items-start gap-y-5 text-[#38126D] w-full   font-semibold">
+              <ul className="flex flex-col items-start gap-y-5 text-[#38126D] w-full font-semibold">
                 {navLinks.map((nav, i) => {
                   function handleNav() {
                     router.push(nav.link);
@@ -105,15 +105,15 @@ export default function MobileNavBar() {
                   return (
                     <motion.li
                       animate={{}}
-                      whileHover={{
-                        borderBottomColor: "#2F9AFF",
-                      }}
+                      // whileHover={{
+                      //   borderBottomColor: "#2F9AFF",
+                      // }}
                       transition={{ duration: 0.2 }}
-                      className="list-none border-b flex hover:bg-[#38126D] hover:text-white hover:py-2 hover:px-4 rounded-full w-full pb-2 text-[18px]"
+                      className="list-none flex hover:bg-[#38126D] hover:text-white hover:py-2 hover:px-4 rounded-full w-full pb-2 text-[18px]"
                       key={i}
                       onClick={handleNav}
                     >
-                      <button className="hover:border-b-2 flex border-[#2F9AFF] hover:text-[#2F9AFF] ">
+                      <button className="flex border-[#2F9AFF] hover:text-[#2F9AFF] ">
                         {nav.name}
                       </button>
                     </motion.li>
@@ -121,7 +121,7 @@ export default function MobileNavBar() {
                 })}
               </ul>
             </div>
-            <div className="flex items-center justify-center center bg-[#38126D] hover:bg-black hover:text-white transitq duration-300 rounded-full text-white py-2 mt-5">
+            <div className="flex items-center justify-center center bg-[#38126D] hover:bg-black hover:text-white transition duration-300 rounded-full text-white py-2 mt-5">
               <button onClick={getIntouch}>Get in touch</button>
             </div>
           </motion.div>

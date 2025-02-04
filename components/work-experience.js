@@ -17,6 +17,7 @@ export default function WorkExperience() {
             </h1>
             {workExperience.map((work) => (
               <div
+                data-aos="fade-up"
                 key={work.title}
                 className="flex items-center gap-x-5 bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634] py-4 px-6 rounded-xl border-t-4 border-[#4F228D]"
               >

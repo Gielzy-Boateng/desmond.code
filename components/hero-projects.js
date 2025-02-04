@@ -5,7 +5,10 @@ import ProjectIntro from "./project-intro";
 export default function HeroProjects() {
   return (
     <WidthConstraint className="">
-      <div className="flex flex-col items-center justify-center">
+      <div
+        data-aos="zoom-in"
+        className="flex flex-col items-center justify-center"
+      >
         <Image
           src={"/homepage/skills.png"}
           width={700}

@@ -29,6 +29,7 @@ export default function Build() {
           create something amazing together!
         </p>
         <Link
+          data-aos="fade-right"
           href="/contact"
           className="mt-7 bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300"
         >

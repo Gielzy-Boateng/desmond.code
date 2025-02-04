@@ -8,7 +8,10 @@ export default function Projects() {
   return (
     <main className=" mt-28 py-24  ">
       <WidthConstraint className="space-y-32">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-x-32">
+        <div
+          data-aos="zoom-in"
+          className="flex flex-col lg:flex-row items-center justify-center gap-x-32"
+        >
           <span>
             <Image
               src={"/project/project.png"}
@@ -19,7 +22,7 @@ export default function Projects() {
               priority
             />
           </span>
-          <div className="text-4xl font-bold space-y-3 ">
+          <div data-aos="zoom-in" className="text-4xl font-bold space-y-3 ">
             <h1 className="text-center ">MY PROJECTS</h1>
             <p className="text-2xl text-center text-[#9857D3]">
               Made with love

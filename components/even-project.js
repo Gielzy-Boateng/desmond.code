@@ -9,7 +9,10 @@ export default function EvenProject({
   projectImage,
 }) {
   return (
-    <section className="flex flex-col items-end justify-center">
+    <section
+      data-aos="fade-up"
+      className="flex flex-col items-end justify-center"
+    >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
         <div className="relative lg:-z-10 ">
           <Image

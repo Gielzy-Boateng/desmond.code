@@ -38,7 +38,13 @@ export default function Footer() {
           </div>
           <div className="flex items-center justify-center space-x-6">
             {links.map((link, i) => (
-              <Link href={link.url} target="_blank" key={i}>
+              <Link
+                data-aos="fade-up"
+                data-aos-delay={link.delay}
+                href={link.url}
+                target="_blank"
+                key={i}
+              >
                 <Image src={link.icon} width={30} height={30} alt={link.name} />
               </Link>
             ))}

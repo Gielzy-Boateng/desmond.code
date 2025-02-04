@@ -2,6 +2,7 @@
 import Header from "@/components/header";
 import "./globals.css";
 import Footer from "@/components/footer";
+import AosProvider from "@/components/aos-provider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -25,9 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={` antialiased overflow-x-hidden bg-[#1A0B2E] scroll-smooth  text-white`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <AosProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AosProvider>
       </body>
     </html>
   );

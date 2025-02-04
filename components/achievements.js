@@ -47,6 +47,7 @@ export default function Achievements() {
         </ul>
       </div>
       <Link
+        data-aos="fade-left"
         href="/projects"
         className=" bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300"
       >

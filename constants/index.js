@@ -1,3 +1,5 @@
+import { delay } from "framer-motion";
+
 export const navLinks = [
   {
     name: "About  ✌️",
@@ -58,20 +60,24 @@ export const links = [
     icon: "/fb-1.svg",
     name: "Facebook",
     url: "https://www.facebook.com/share/1AwgvEL9Zq/?mibextid=wwXIfr",
+    delay: "100",
   },
   {
     icon: "/twitter-1.svg",
     name: "Twiiter",
     url: "https://x.com/otumfuor_nana1?s=21",
+    delay: "200",
   },
   {
     icon: "/insta-1.svg",
     name: "Instagramk",
     url: "https://www.instagram.com/boateng3612",
+    delay: "300",
   },
   {
     icon: "/whatsapp-1.svg",
     name: "Whatsapp",
     url: "https://wa.me/233571991014?text=Hello%20Desmond%2C%20I%20want%20you%20to%20build%20something%20cool%20for%20me",
+    delay: "400",
   },
 ];
