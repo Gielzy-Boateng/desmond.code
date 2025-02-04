@@ -18,6 +18,9 @@ export const metadata = {
   title: "Desmond Boateng | Full-Stack Developer",
   description:
     " Software Engineer skilled in web and mobile app development using React, Next.js, Flutter, and more.",
+  icons: {
+    icon: "/brand.png", // Use your PNG file here
+  },
 };
 
 export default function RootLayout({ children }) {

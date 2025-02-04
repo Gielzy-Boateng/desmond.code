@@ -12,7 +12,7 @@ export default function Footer() {
     // <footer className="bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634]">
     <footer className="bg-black">
       <WidthConstraint>
-        <section className="flex flex-col items-center justify-center mt-10 space-y-20 mb-5">
+        <section className=" py-8 flex flex-col items-center justify-center mt-10 space-y-20 mb-5">
           <div>
             <Link href="/">
               <Image
