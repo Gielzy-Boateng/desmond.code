@@ -10,7 +10,7 @@ export default function EvenProject({
 }) {
   return (
     <section
-      data-aos="fade-up"
+      // data-aos="fade-up"
       className="flex flex-col items-end justify-center"
     >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center">

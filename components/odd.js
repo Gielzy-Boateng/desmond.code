@@ -9,11 +9,8 @@ export default function OddProject({
   projectImage,
 }) {
   return (
-    <div>
-      <section
-        data-aos="zoom-in"
-        className="flex flex-col items-center lg:items-end justify-center"
-      >
+    <div data-aos="zoom-in">
+      <section className="flex flex-col items-center lg:items-end justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center transition-all duration-300">
           <div className="max-w-[600px] space-y-2">
             <h2 className="text-[#9857D3] font-semibold text-xl">
