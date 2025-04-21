@@ -79,10 +79,10 @@ export default function Projects() {
           projectTitle="ADANSI UNITED FC"
         />
         <OddProject
-          projectImage="/homepage/pic-6.png"
-          projectDescription="A website designed for Wedey Farms to showcase their fresh, organic local produce grown directly on their farms. Built to connect customers with high-quality food at affordable prices, the platform highlights their commitment to sustainability, transparency, and healthy living."
-          projectLink="http://wedeyfarms.com/"
-          projectTitle="WEDEY FARMS OFFICIAL SITE"
+          projectImage="/homepage/pic-13.png"
+          projectDescription="​SkillUp Academy is a practical, beginner-friendly platform designed to help users build real-world skills in data analytics and coding. It offers hands-on training in tools like Excel, SQL, Python, and JavaScript, with a focus on interactive learning through real-world projects and expert-led instruction. The site is fully functional and emphasizes usability over design, providing learners with a streamlined experience to gain job-ready skills and earn certifications."
+          projectLink="https://skill-up-academy-tau.vercel.app/"
+          projectTitle="Skill Up Academy"
         />
         <EvenProject
           projectImage="/homepage/pic-10.png"
@@ -91,10 +91,10 @@ export default function Projects() {
           projectTitle="CURRENCY CONVERTER"
         />
         <OddProject
-          projectImage="/homepage/pic-9.png"
-          projectDescription="A website developed for Kobby's Apartments Lodge to showcase modern accommodation options. Featuring detailed room listings, high-quality visuals, and easy booking functionality, the platform ensures a user-friendly experience for guests seeking comfort and convenience."
-          projectLink="https://kobbysapartments.vercel.app/"
-          projectTitle="KOBBY'S APT AND LODGE"
+          projectImage="/homepage/pic-6.png"
+          projectDescription="A website designed for Wedey Farms to showcase their fresh, organic local produce grown directly on their farms. Built to connect customers with high-quality food at affordable prices, the platform highlights their commitment to sustainability, transparency, and healthy living."
+          projectLink="http://wedeyfarms.com/"
+          projectTitle="WEDEY FARMS OFFICIAL SITE"
         />
         <EvenProject
           projectImage="/homepage/pic-8.png"
@@ -103,10 +103,10 @@ export default function Projects() {
           projectTitle="AUTHENTIC PHONES"
         />
         <OddProject
-          projectImage="/homepage/pic-11.png"
-          projectDescription="A basic yet functional bill checker website developed to verify and manage bills efficiently. While the platform is fully operational, it features a minimal design without added styling, focusing solely on practicality and delivering accurate results for users."
-          projectLink="https://bill-checker-five.vercel.app/"
-          projectTitle="BILL CHECKER"
+          projectImage="/homepage/pic-9.png"
+          projectDescription="A website developed for Kobby's Apartments Lodge to showcase modern accommodation options. Featuring detailed room listings, high-quality visuals, and easy booking functionality, the platform ensures a user-friendly experience for guests seeking comfort and convenience."
+          projectLink="https://kobbysapartments.vercel.app/"
+          projectTitle="KOBBY'S APT AND LODGE"
         />
         <EvenProject
           projectImage="/homepage/pic-12.png"
@@ -114,6 +114,18 @@ export default function Projects() {
           projectLink="https://travel-list-one-psi.vercel.app/"
           projectTitle="HOME COMING TRAVEL LIST"
         />
+        <OddProject
+          projectImage="/homepage/pic-11.png"
+          projectDescription="A basic yet functional bill checker website developed to verify and manage bills efficiently. While the platform is fully operational, it features a minimal design without added styling, focusing solely on practicality and delivering accurate results for users."
+          projectLink="https://bill-checker-five.vercel.app/"
+          projectTitle="BILL CHECKER"
+        />
+        {/* <EvenProject
+          projectImage="/homepage/pic-13.png"
+          projectDescription="​SkillUp Academy is a practical, beginner-friendly platform designed to help users build real-world skills in data analytics and coding. It offers hands-on training in tools like Excel, SQL, Python, and JavaScript, with a focus on interactive learning through real-world projects and expert-led instruction. The site is fully functional and emphasizes usability over design, providing learners with a streamlined experience to gain job-ready skills and earn certifications."
+          projectLink="https://skill-up-academy-tau.vercel.app/"
+          projectTitle="Skill Up Academy"
+        /> */}
       </WidthConstraint>
     </main>
   );

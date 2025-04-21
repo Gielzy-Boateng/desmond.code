@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import AosProvider from "@/components/aos-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -33,6 +34,16 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </AosProvider>
+
+        {/* <!-- Start of HubSpot Embed Code --> */}
+        <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-eu1.hs-scripts.com/146066678.js"
+        />
+        {/* <!-- End of HubSpot Embed Code --> */}
       </body>
     </html>
   );

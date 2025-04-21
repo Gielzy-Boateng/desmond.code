@@ -70,7 +70,7 @@ export const links = [
   },
   {
     icon: "/insta-1.svg",
-    name: "Instagramk",
+    name: "Instagram",
     url: "https://www.instagram.com/boateng3612",
     delay: "300",
   },

@@ -9,7 +9,7 @@ export default function OddProject({
   projectImage,
 }) {
   return (
-    <div data-aos="zoom-in">
+    <div>
       <section className="flex flex-col items-center lg:items-end justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center transition-all duration-300">
           <div className="max-w-[600px] space-y-2">
