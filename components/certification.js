@@ -31,6 +31,9 @@ export default function Certification() {
           <li>
             <strong>React – The Complete Guide</strong> – Udemy
           </li>
+          <li>
+            <strong>Computer Science Degree</strong> – Udemy
+          </li>
         </ul>
       </div>
     </div>

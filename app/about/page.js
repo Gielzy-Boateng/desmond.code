@@ -15,17 +15,19 @@ export default function About() {
         alt="Me"
       />
       <p className="tracking-wide text-center lg:text-start leading-[1.4]">
-        Hello, I&apos;m Desmond Nana Boateng, a passionate self-taught software
-        engineer with a background in science turned tech enthusiast. My journey
-        into software development began with a deep curiosity for solving
-        real-world problems using technology.
+        Hello, I&apos;m Desmond Nana Boateng, a passionate software engineer
+        with a background in science turned tech enthusiast. My journey into
+        software development began with a deep curiosity for solving real-world
+        problems using technology.
       </p>
       <p className="tracking-wide text-center  leading-[1.4] lg:text-start">
         Starting from online courses and late-night coding sessions, I have
         honed my skills in core web technologies like{" "}
         <strong>
-          HTML, CSS, JavaScript, and Tailwind CSS, as well as advanced
-          frameworks and tools such as React, Next.js, Flutter, and Firebase.
+          HTML, CSS, JavaScript, TypeScript, HTML5, CSS3, Sass, TailwindCSS,
+          Bootstrap as well as advanced frameworks and tools such as React,
+          Next.js, Dart, Flutter, Flutter BLOC, Vercel, Netlify, NoSQL, SQL,
+          Webpack, RESTful APIs, GraphQL and Firebase.
         </strong>{" "}
         These enable me to craft dynamic, visually appealing, and highly
         functional web and mobile applications that prioritize user experience
