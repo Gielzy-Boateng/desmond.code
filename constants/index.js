@@ -13,12 +13,16 @@ export const navLinks = [
     name: "Contact Me  🤙",
     link: "/contact",
   },
+  {
+    name: "Code Vault🧑‍💻",
+    link: "/extras",
+  },
 ];
 
 export const workExperience = [
   {
     title: "Full Stack Developer",
-    company: "BitHub Inc",
+    company: "BitHub Inc.",
     icon: "/homepage/icon-1.png",
     responsibilities: [
       "Built end-to-end web applications, ensuring seamless user experiences.",
@@ -26,8 +30,8 @@ export const workExperience = [
     ],
   },
   {
-    title: "Software Engineer",
-    company: "Freelance",
+    title: "Full Stack Developer",
+    company: "Wedey Farms",
     icon: "/homepage/icon-2.png",
     responsibilities: [
       "Built custom web and mobile solutions for clients using React, Next.js, and Flutter.",
@@ -36,7 +40,7 @@ export const workExperience = [
   },
   {
     title: "Frontend Developer",
-    company: "Tech Solutions Co.",
+    company: "Brylluplisten.",
     icon: "/homepage/icon-1.png",
     responsibilities: [
       "Designed responsive user interfaces, improving accessibility and customer retention.",
@@ -44,8 +48,8 @@ export const workExperience = [
     ],
   },
   {
-    title: "Backend Developer Intern",
-    company: "CodeWorks Labs",
+    title: "Full Stack Developer",
+    company: "Idigin Group",
 
     icon: "/homepage/icon-3.png",
     responsibilities: [

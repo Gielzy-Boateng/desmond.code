@@ -47,7 +47,17 @@ const config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Scans your `app` directory for class usage
   ],
   theme: {
-    extend: {}, // Empty for now, but ready for future customizations
+    extend: {
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.3s ease-out",
+      },
+    }, // Empty for now, but ready for future customizations
   },
   plugins: [], // Plugins can be added here if needed
 };

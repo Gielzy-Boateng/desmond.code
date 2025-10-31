@@ -15,10 +15,10 @@ export default function WorkExperience() {
             <h1 className="font-bold mt-10 lg:mt-0 text-2xl absolute -translate-y-24 lg:translate-y-14 xl:-translate-y-20 ">
               WORK EXPERIENCE
             </h1>
-            {workExperience.map((work) => (
+            {workExperience.map((work, i) => (
               <div
                 data-aos="fade-up"
-                key={work.title}
+                key={i}
                 className="flex items-center gap-x-5 bg-gradient-to-br from-[#130428] via-[#38126D] to-[#190634] py-4 px-6 rounded-xl border-t-4 border-[#4F228D]"
               >
                 <span>
