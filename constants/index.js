@@ -2,20 +2,20 @@ import { delay } from "framer-motion";
 
 export const navLinks = [
   {
-    name: "About  ✌️",
+    name: "About",
     link: "/about",
   },
   {
-    name: "Projects  🧑‍💻",
+    name: "Projects",
     link: "/projects",
   },
   {
-    name: "Contact Me  🤙",
+    name: "Contact Me",
     link: "/contact",
   },
   {
-    name: "Code Vault🧑‍💻",
-    link: "/extras",
+    name: "Cheat Vault",
+    link: "/cheats",
   },
 ];
 
@@ -49,7 +49,7 @@ export const workExperience = [
   },
   {
     title: "Full Stack Developer",
-    company: "Idigin Group",
+    company: "Indigin Group",
 
     icon: "/homepage/icon-3.png",
     responsibilities: [

@@ -50,14 +50,25 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-y-5 lg:block lg:gap-y-0">
-          <Image
-            src="/homepage/new-me.png"
-            width={400}
-            height={400}
-            alt="Nana"
-            className=""
-            priority
-          />
+          <div className="relative group">
+            {/* Primary glow effect */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-full opacity-40 group-hover:opacity-75 blur-xl transition-all duration-500 animate-glow" />
+
+            {/* Secondary glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-600 rounded-full opacity-40 group-hover:opacity-75 blur-lg transition-all duration-500 animate-float" />
+
+            {/* Image container */}
+            <div className="relative rounded-full overflow-hidden transform group-hover:scale-[1.02] transition-all duration-500">
+              <Image
+                src="/homepage/new-me.png"
+                width={400}
+                height={400}
+                alt="Nana"
+                className="rounded-full"
+                priority
+              />
+            </div>
+          </div>
           <Link
             href="/contact"
             className="lg:hidden z-20 font-semibold mt-5 text-nowrap bg-[#38126D] hover:bg-white hover:text-black px-6 py-4 rounded-lg transition-all duration-300"

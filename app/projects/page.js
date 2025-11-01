@@ -85,17 +85,23 @@ export default function Projects() {
           projectTitle="Skill Up Academy"
         />
         <EvenProject
+          projectImage="/homepage/pic-14.png"
+          projectDescription="Buildify is a no-code CMS platform built with Laravel that lets users create and customize professional web pages through a simple dashboard. Users can edit content, upload images, choose themes, and track visitor analytics - all without touching any code"
+          projectLink="https://buildify-production.up.railway.app/"
+          projectTitle="BUILDIFY"
+        />
+        <OddProject
           projectImage="/homepage/pic-10.png"
           projectDescription="A web application built to provide users with an intuitive and reliable currency conversion tool. Designed for speed and accuracy, it supports multiple currencies, updates exchange rates in real-time, and ensures a seamless user experience for international transactions or travel planning."
           projectLink="https://currency-converter-chi-self.vercel.app/"
           projectTitle="CURRENCY CONVERTER"
         />
-        <OddProject
+        {/* <OddProject
           projectImage="/homepage/pic-6.png"
           projectDescription="A website designed for Wedey Farms to showcase their fresh, organic local produce grown directly on their farms. Built to connect customers with high-quality food at affordable prices, the platform highlights their commitment to sustainability, transparency, and healthy living."
           projectLink="http://wedeyfarms.com/"
           projectTitle="WEDEY FARMS OFFICIAL SITE"
-        />
+        /> */}
         <EvenProject
           projectImage="/homepage/pic-8.png"
           projectDescription="A website crafted for Authentic Phones Technic, highlighting their expertise in phone repair and maintenance. Designed with user-friendly navigation, it offers detailed service listings, appointment booking features, and insights into their commitment to quality and customer satisfaction."

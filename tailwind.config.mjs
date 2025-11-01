@@ -48,6 +48,20 @@ const config = {
   ],
   theme: {
     extend: {
+      animation: {
+        glow: "glow 3s ease-in-out infinite alternate",
+        float: "float 6s ease-in-out infinite",
+      },
+      keyframes: {
+        glow: {
+          "0%": { opacity: 0.4, transform: "scale(0.98)" },
+          "100%": { opacity: 0.8, transform: "scale(1.02)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(10px)" },

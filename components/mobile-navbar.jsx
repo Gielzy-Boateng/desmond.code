@@ -52,15 +52,16 @@ export default function MobileNavBar() {
   }, [setDisplay]);
 
   return (
-    <nav className="px-3 z-[45] lg:hidden">
+    <nav className="px-3 z-[45] md:hidden">
       <sction className="flex items-center justify-between px-5 fixed top-0 left-0 right-0">
         <div className="py-4">
           <Link href="/">
             <Image
-              src="/brand-logo.png"
+              src="/Brand Logo.png"
               alt="brandlogo"
               width={80}
               height={80}
+              className="rounded-full"
             />
           </Link>
         </div>
@@ -84,10 +85,11 @@ export default function MobileNavBar() {
             <div className="flex items-center justify-between mb-10">
               <Link href="/">
                 <Image
-                  src="/brand-logo.png"
+                  src="/Brand Logo.png"
                   alt="brandLogo"
                   width={100}
                   height={100}
+                  className="rounded-full"
                 />
               </Link>
               <button onClick={handleClose} className="">

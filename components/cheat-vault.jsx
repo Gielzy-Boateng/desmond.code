@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, ChevronDown, ChevronUp } from "lucide-react";
+import * as gtag from "@/lib/gtag";
 
 const CheatVault = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -58,46 +59,14 @@ goto End
     {
       id: 2,
       title:
-        "🔒 How to Lock & Hide Any Folder on Your PC (No Software Needed!)",
-      description: " Easy Privacy Trick",
+        "Download YouTube videos and playlists completely FREE in HD or MP4 format",
+      description: " step-by-step how to use yt-dlp and FFmpeg",
       content: {
-        text: "✅ How to lock and unlock your files easily",
-        code: `@ECHO OFF
-title Folder Locker
-if EXIST "Locker" goto UNLOCK
-if NOT EXIST Private goto MDLOCKER
-:CONFIRM
-echo Are you sure you want to lock the folder? (Y/N)
-set /p "cho=>"
-if %cho%==Y goto LOCK
-if %cho%==y goto LOCK
-if %cho%==N goto END
-if %cho%==n goto END
-echo Invalid choice.
-goto CONFIRM
-:LOCK
-ren Private "Locker"
-attrib +h +s "Locker"
-echo Folder locked.
-goto End
-:UNLOCK
-echo Enter password to unlock:
-set /p "pass=>"
-if NOT %pass%==YOURPASSWORDHERE goto FAIL
-attrib -h -s "Locker"
-ren "Locker" Private
-echo Folder unlocked.
-goto End
-:FAIL
-echo Invalid password.
-goto End
-:MDLOCKER
-md Private
-echo Private folder created successfully.
-goto End
-:End
+        text: "two powerful, open-source tools — to download, merge, and save videos directly to your computer.",
+        code: `# Install yt-dlp and FFmpeg
+# For Windows, download executables from their official sites and add them to your PATH.
 `,
-        video: "",
+        video: "/videos/download-video-guide.mp4",
       },
     },
     // Add more topics here
@@ -109,10 +78,16 @@ goto End
       topic.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const copyToClipboard = async (text, topicId) => {
+  const copyToClipboard = async (text, topicId, topicTitle) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopiedId(topicId);
+      // Track copy event
+      gtag.event({
+        action: "copy_code",
+        category: "engagement",
+        label: topicTitle,
+      });
       setTimeout(() => {
         setCopiedId(null);
       }, 2000);
@@ -138,7 +113,19 @@ goto End
                        placeholder:text-gray-400 text-white"
               placeholder="Search topics..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                // Track search after a brief delay to avoid too many events
+                if (e.target.value.trim()) {
+                  setTimeout(() => {
+                    gtag.event({
+                      action: "search_topics",
+                      category: "engagement",
+                      label: e.target.value.trim(),
+                    });
+                  }, 1000);
+                }
+              }}
             />
           </div>
         </div>
@@ -167,11 +154,18 @@ goto End
                 <div
                   className="p-6 cursor-pointer"
                   onClick={() => {
+                    const isExpanding = !expandedTopics.includes(topic.id);
                     setExpandedTopics((prev) =>
-                      prev.includes(topic.id)
-                        ? prev.filter((id) => id !== topic.id)
-                        : [...prev, topic.id]
+                      isExpanding
+                        ? [...prev, topic.id]
+                        : prev.filter((id) => id !== topic.id)
                     );
+                    // Track topic expansion/collapse
+                    gtag.event({
+                      action: isExpanding ? "expand_topic" : "collapse_topic",
+                      category: "engagement",
+                      label: topic.title,
+                    });
                   }}
                 >
                   <div className="flex justify-between items-start mb-2">
@@ -207,7 +201,11 @@ goto End
                         <div className="absolute right-2 top-2">
                           <button
                             onClick={() =>
-                              copyToClipboard(topic.content.code, topic.id)
+                              copyToClipboard(
+                                topic.content.code,
+                                topic.id,
+                                topic.title
+                              )
                             }
                             className="px-3 py-1 text-sm bg-blue-500/20 hover:bg-blue-500/30 
                                    text-blue-300 rounded-md transition-colors duration-200
