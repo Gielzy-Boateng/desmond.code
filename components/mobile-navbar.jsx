@@ -86,7 +86,7 @@ export default function MobileNavBar({ isOpen, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 w-[100%] h-[60%] max-w-sm z-50 overflow-hidden rounded-b-xl"
+            className="fixed top-0 right-0 bottom-0 w-[85%] h-[100%] max-w-sm z-50 overflow-hidden rounded-b-xl"
           >
             {/* Animated background */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#1A0B2E] via-[#2A1545] to-[#1A0B2E]" />
