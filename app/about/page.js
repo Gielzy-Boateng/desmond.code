@@ -4,6 +4,65 @@ import Build from "@/components/build";
 import Certification from "@/components/certification";
 import Achievements from "@/components/achievements";
 
+export const metadata = {
+  title: "About | JuizyCode - Full-Stack Developer Journey",
+  description:
+    "Learn about JuizyCode's journey from science labs to software engineering. Discover my expertise in React, Next.js, Flutter, and modern web development. Explore my tech stack, achievements, and professional experience.",
+  keywords:
+    "juizycode about, software engineer background, tech journey, full stack developer experience, React developer, Next.js expert, Flutter developer, web development journey",
+  authors: [{ name: "JuizyCode" }],
+  creator: "JuizyCode",
+  publisher: "JuizyCode",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://juizycode.vip"),
+  alternates: {
+    canonical: "https://juizycode.vip/about",
+  },
+  openGraph: {
+    title: "About JuizyCode - Journey of a Full-Stack Developer",
+    description:
+      "Discover my journey from science to software engineering. Expert in React, Next.js, Flutter, and modern web development technologies.",
+    url: "https://juizycode.vip/about",
+    siteName: "JuizyCode",
+    images: [
+      {
+        url: "/Brand Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "JuizyCode - Full-Stack Developer Journey",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About JuizyCode - Journey of a Full-Stack Developer",
+    description: "From science labs to software engineering - my tech journey.",
+    images: ["Brand Logo.png"],
+    creator: "https://x.com/otumfuor_nana1?s=21",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google:
+      "google-site-verification=Fd0kIALRMGAE38m_5pLrZcYk13TBjCia9sdfFyn9X0s",
+  },
+};
+
 export default function About() {
   return (
     <WidthConstraint className="mt-28 py-44">

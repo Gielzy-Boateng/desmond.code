@@ -2,6 +2,66 @@ import FormField from "@/components/form-field";
 import WidthConstraint from "@/components/width-constraint";
 import { Mail, MessageCircle, Clock } from "lucide-react";
 
+export const metadata = {
+  title: "Contact | JuizyCode - Let's Build Something Amazing",
+  description:
+    "Get in touch with JuizyCode for your web and mobile development needs. Free consultation available. Let's discuss your project and create something extraordinary together.",
+  keywords:
+    "contact juizycode, hire developer, web development services, mobile app development, project consultation, React developer contact, Next.js developer, Flutter developer contact",
+  authors: [{ name: "JuizyCode" }],
+  creator: "JuizyCode",
+  publisher: "JuizyCode",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://juizycode.vip"),
+  alternates: {
+    canonical: "https://juizycode.vip/contact",
+  },
+  openGraph: {
+    title: "Contact JuizyCode - Let's Create Something Extraordinary",
+    description:
+      "Ready to bring your project to life? Get in touch for a free consultation and let's create something amazing together.",
+    url: "https://juizycode.vip/contact",
+    siteName: "JuizyCode",
+    images: [
+      {
+        url: "/Brand Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact JuizyCode - Web & Mobile Development",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact JuizyCode - Let's Create Something Extraordinary",
+    description:
+      "Get in touch for your next big project. Free consultation available.",
+    images: ["Brand Logo.png"],
+    creator: "https://x.com/otumfuor_nana1?s=21",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google:
+      "google-site-verification=Fd0kIALRMGAE38m_5pLrZcYk13TBjCia9sdfFyn9X0s",
+  },
+};
+
 export default function Contact() {
   return (
     <div className="relative mt-20  min-h-screen overflow-hidden">

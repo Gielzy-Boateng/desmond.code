@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Analytics from "@/components/Analytics";
 import AnalyticsWrapper from "@/components/analytics-wrapper";
+import { icons } from "lucide-react";
 
 // export const metadata = {
 //   title: "Desmond Boateng | Full-Stack Developer",
@@ -23,6 +24,9 @@ export const metadata = {
   keywords:
     "juizycode, coding guides, programming tutorials, tech tricks, developer resources, cheat sheets, web development, software engineering,app development, full-stack development, JavaScript, React, Next.js, Flutter,php,laravel,django,node.js,python,ruby on rails,java,csharp,c++,mobile development,ios development,android development",
   authors: [{ name: "JuizyCode" }],
+  icons: {
+    icon: "/Brand Logo.png",
+  },
   creator: "JuizyCode",
   publisher: "JuizyCode",
   formatDetection: {
@@ -56,8 +60,8 @@ export const metadata = {
     title: "JuizyCode - Premium Code Guides & Tech Tutorials",
     description:
       "Access exclusive coding guides, tech tricks, and developer resources.",
-    images: ["/og-image.jpg"],
-    creator: "@juizycode", // Replace with your actual Twitter handle
+    images: ["Brand Logo.png"],
+    creator: "https://x.com/otumfuor_nana1?s=21", // Replace with your actual Twitter handle
   },
   robots: {
     index: true,
@@ -71,7 +75,8 @@ export const metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Add after Step 2
+    google:
+      "google-site-verification=Fd0kIALRMGAE38m_5pLrZcYk13TBjCia9sdfFyn9X0s",
   },
 };
 
