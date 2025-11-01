@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import { Suspense } from "react";
 import AosProvider from "@/components/aos-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -19,7 +20,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Google Analytics Script (must be in <head>) */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-70SZFWB59W"
@@ -40,13 +40,14 @@ export default function RootLayout({ children }) {
         <AosProvider>
           <AnalyticsWrapper>
             <Header />
-            <Analytics />
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
             {children}
             <Footer />
           </AnalyticsWrapper>
         </AosProvider>
 
-        {/* ✅ HubSpot Embed Code */}
         <Script
           type="text/javascript"
           id="hs-script-loader"
