@@ -30,8 +30,8 @@ export default function Header() {
           mobileMenuOpen ? "z-30" : "z-50"
         } ${
           scrolled
-            ? "py-3 bg-[#1A0B2E]/95 backdrop-blur-xl border-b border-purple-500/30 shadow-lg shadow-purple-500/10"
-            : "py-4 bg-[#1A0B2E]/80 backdrop-blur-md border-b border-purple-500/20"
+            ? "py-2 bg-[#1A0B2E]/95 backdrop-blur-xl border-b border-purple-500/30 shadow-lg shadow-purple-500/10"
+            : "py-3 bg-[#1A0B2E]/80 backdrop-blur-md border-b border-purple-500/20"
         }`}
       >
         <WidthConstraint className="flex items-center justify-between">
