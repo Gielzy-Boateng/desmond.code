@@ -1,5 +1,3 @@
-"use client";
-
 import FormField from "@/components/form-field";
 import WidthConstraint from "@/components/width-constraint";
 
