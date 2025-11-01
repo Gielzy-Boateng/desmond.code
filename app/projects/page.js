@@ -1,11 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import WidthConstraint from "@/components/width-constraint";
 import React from "react";
 import EvenProject from "@/components/even-project";
 import OddProject from "@/components/odd";
 import { Sparkles, Code2, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+// import { useRef } from "react";
+// import { useInView } from "framer-motion";
 
 export default function Projects() {
+  // const ref = useRef(null);
+  // const isInView = useInView(ref, { once: false, margin: "-100px" });
+
   const stats = [
     { label: "Projects Completed", value: "15+", icon: Rocket },
     { label: "Happy Clients", value: "12+", icon: Sparkles },
@@ -127,109 +135,112 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="space-y-32">
-          <div data-aos="fade-up">
-            <OddProject
-              projectTitle="VANS AND TRUCKERS"
-              projectDescription="A comprehensive logistics platform revolutionizing freight management. Track shipments in real-time, schedule deliveries with precision, and optimize routes for maximum efficiency. Built with modern tech stack to ensure seamless fleet performance monitoring and on-time arrivals."
-              projectLink="https://www.vansandtruckers.com/"
-              projectImage="/homepage/pic-5.png"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectTitle="VANS AND TRUCKERS"
+            projectDescription="A comprehensive logistics platform revolutionizing freight management. Track shipments in real-time, schedule deliveries with precision, and optimize routes for maximum efficiency. Built with modern tech stack to ensure seamless fleet performance monitoring and on-time arrivals."
+            projectLink="https://www.vansandtruckers.com/"
+            projectImage="/homepage/pic-5.png"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <EvenProject
-              projectImage="/homepage/pic-1.png"
-              projectLink="https://wedey-site.vercel.app/"
-              projectTitle="WEDEY FARMS"
-              projectDescription="An innovative agritech platform connecting sustainable farming with modern consumers. Features real-time inventory management, farm-to-table tracking, and community engagement tools. Built to promote eco-friendly practices and support local agriculture through cutting-edge technology."
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <EvenProject
+            projectImage="/homepage/pic-1.png"
+            projectLink="https://wedey-site.vercel.app/"
+            projectTitle="WEDEY FARMS"
+            projectDescription="An innovative agritech platform connecting sustainable farming with modern consumers. Features real-time inventory management, farm-to-table tracking, and community engagement tools. Built to promote eco-friendly practices and support local agriculture through cutting-edge technology."
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <OddProject
-              projectImage="/homepage/pic-3.png"
-              projectDescription="Luxury real estate showcase featuring stunning property listings, interactive 3D tours, and seamless booking experience. Designed with premium aesthetics and optimized performance to highlight Fifth Avenue's exclusive apartments with sophisticated visual storytelling."
-              projectLink="https://www.fifthavenueluxuryapartments.com/"
-              projectTitle="FIFTH AVENUE LUXURY APARTMENTS"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectImage="/homepage/pic-3.png"
+            projectDescription="Luxury real estate showcase featuring stunning property listings, interactive 3D tours, and seamless booking experience. Designed with premium aesthetics and optimized performance to highlight Fifth Avenue's exclusive apartments with sophisticated visual storytelling."
+            projectLink="https://www.fifthavenueluxuryapartments.com/"
+            projectTitle="FIFTH AVENUE LUXURY APARTMENTS"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <EvenProject
-              projectImage="/homepage/pic-2.png"
-              projectDescription="A dynamic sports platform for Ghana's premier football club. Features player profiles, match schedules, live updates, and academy programs. Built to inspire the next generation of athletes with responsive design and engaging content management."
-              projectLink="https://adansiunitedfc.com/"
-              projectTitle="ADANSI UNITED FC"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <EvenProject
+            projectImage="/homepage/pic-2.png"
+            projectDescription="A dynamic sports platform for Ghana's premier football club. Features player profiles, match schedules, live updates, and academy programs. Built to inspire the next generation of athletes with responsive design and engaging content management."
+            projectLink="https://adansiunitedfc.com/"
+            projectTitle="ADANSI UNITED FC"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <OddProject
-              projectImage="/homepage/pic-13.png"
-              projectDescription="Interactive e-learning platform offering hands-on training in data analytics and coding. Features real-time code editors, project-based learning modules, and progress tracking. Built with modern frameworks to deliver an engaging, job-ready educational experience."
-              projectLink="https://skill-up-academy-tau.vercel.app/"
-              projectTitle="SKILLUP ACADEMY"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectImage="/homepage/pic-13.png"
+            projectDescription="Interactive e-learning platform offering hands-on training in data analytics and coding. Features real-time code editors, project-based learning modules, and progress tracking. Built with modern frameworks to deliver an engaging, job-ready educational experience."
+            projectLink="https://skill-up-academy-tau.vercel.app/"
+            projectTitle="SKILLUP ACADEMY"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <EvenProject
-              projectImage="/homepage/pic-14.png"
-              projectDescription="Revolutionary no-code CMS platform empowering users to build professional websites without coding. Features drag-and-drop interface, theme customization, visitor analytics, and real-time content editing. Built with Laravel for robust performance and scalability."
-              projectLink="https://buildify-production.up.railway.app/"
-              projectTitle="BUILDIFY"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <EvenProject
+            projectImage="/homepage/pic-14.png"
+            projectDescription="Revolutionary no-code CMS platform empowering users to build professional websites without coding. Features drag-and-drop interface, theme customization, visitor analytics, and real-time content editing. Built with Laravel for robust performance and scalability."
+            projectLink="https://buildify-production.up.railway.app/"
+            projectTitle="BUILDIFY"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <OddProject
-              projectImage="/homepage/pic-10.png"
-              projectDescription="Real-time currency conversion tool supporting 150+ currencies with live exchange rates. Features instant calculations, historical data visualization, and offline mode. Optimized for speed and accuracy to serve travelers and businesses worldwide."
-              projectLink="https://currency-converter-chi-self.vercel.app/"
-              projectTitle="CURRENCY CONVERTER"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectImage="/homepage/pic-10.png"
+            projectDescription="Real-time currency conversion tool supporting 150+ currencies with live exchange rates. Features instant calculations, historical data visualization, and offline mode. Optimized for speed and accuracy to serve travelers and businesses worldwide."
+            projectLink="https://currency-converter-chi-self.vercel.app/"
+            projectTitle="CURRENCY CONVERTER"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <EvenProject
-              projectImage="/homepage/pic-8.png"
-              projectDescription="Modern service platform for phone repair specialists. Features online booking system, service tracking, inventory management, and customer reviews. Built to streamline operations and enhance customer satisfaction through seamless digital experience."
-              projectLink="https://authentic-phones-technique.vercel.app/"
-              projectTitle="AUTHENTIC PHONES"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <EvenProject
+            projectImage="/homepage/pic-8.png"
+            projectDescription="Modern service platform for phone repair specialists. Features online booking system, service tracking, inventory management, and customer reviews. Built to streamline operations and enhance customer satisfaction through seamless digital experience."
+            projectLink="https://authentic-phones-technique.vercel.app/"
+            projectTitle="AUTHENTIC PHONES"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <OddProject
-              projectImage="/homepage/pic-9.png"
-              projectDescription="Elegant accommodation booking platform showcasing modern lodging options. Features real-time availability, virtual tours, secure payment integration, and guest reviews. Designed to provide effortless booking experience for travelers seeking comfort."
-              projectLink="https://kobbysapartments.vercel.app/"
-              projectTitle="KOBBY'S APT AND LODGE"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectImage="/homepage/pic-9.png"
+            projectDescription="Elegant accommodation booking platform showcasing modern lodging options. Features real-time availability, virtual tours, secure payment integration, and guest reviews. Designed to provide effortless booking experience for travelers seeking comfort."
+            projectLink="https://kobbysapartments.vercel.app/"
+            projectTitle="KOBBY'S APT AND LODGE"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <EvenProject
-              projectImage="/homepage/pic-12.png"
-              projectDescription="Smart travel companion for organized trip planning. Features customizable packing lists, itinerary builder, weather integration, and collaborative planning tools. Minimalist design focused on functionality to simplify travel preparation."
-              projectLink="https://travel-list-one-psi.vercel.app/"
-              projectTitle="HOMECOMING TRAVEL LIST"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <EvenProject
+            projectImage="/homepage/pic-12.png"
+            projectDescription="Smart travel companion for organized trip planning. Features customizable packing lists, itinerary builder, weather integration, and collaborative planning tools. Minimalist design focused on functionality to simplify travel preparation."
+            projectLink="https://travel-list-one-psi.vercel.app/"
+            projectTitle="HOMECOMING TRAVEL LIST"
+          />
+          {/* </div> */}
 
-          <div data-aos="fade-up">
-            <OddProject
-              projectImage="/homepage/pic-11.png"
-              projectDescription="Efficient utility management tool for bill verification and tracking. Features automated calculations, payment history, and expense analytics. Built with focus on accuracy and reliability to help users manage their finances effectively."
-              projectLink="https://bill-checker-five.vercel.app/"
-              projectTitle="BILL CHECKER"
-            />
-          </div>
+          {/* <div data-aos="fade-up"> */}
+          <OddProject
+            projectImage="/homepage/pic-11.png"
+            projectDescription="Efficient utility management tool for bill verification and tracking. Features automated calculations, payment history, and expense analytics. Built with focus on accuracy and reliability to help users manage their finances effectively."
+            projectLink="https://bill-checker-five.vercel.app/"
+            projectTitle="BILL CHECKER"
+          />
         </div>
+        {/* </div> */}
 
         {/* CTA Section */}
-        <div
-          data-aos="fade-up"
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          // data-aos="fade-up"
           className="relative overflow-hidden bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur border border-purple-500/30 rounded-2xl p-12 md:p-16 mt-32"
         >
           {/* Background effects */}
@@ -262,7 +273,7 @@ export default function Projects() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </WidthConstraint>
     </main>
   );
