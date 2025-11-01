@@ -1,8 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Search, ChevronDown, ChevronUp } from "lucide-react";
-import * as gtag from "@/lib/gtag";
+import {
+  Search,
+  ChevronDown,
+  ChevronUp,
+  Sparkles,
+  Code2,
+  Lock,
+} from "lucide-react";
 
 const CheatVault = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -82,12 +88,6 @@ goto End
     try {
       await navigator.clipboard.writeText(text);
       setCopiedId(topicId);
-      // Track copy event
-      gtag.event({
-        action: "copy_code",
-        category: "engagement",
-        label: topicTitle,
-      });
       setTimeout(() => {
         setCopiedId(null);
       }, 2000);
@@ -96,45 +96,102 @@ goto End
     }
   };
 
+  const stats = [
+    { label: "Total Guides", value: `${topics.length}`, icon: Code2 },
+    { label: "Categories", value: "8+", icon: Sparkles },
+    { label: "Users Helped", value: "1K+", icon: Lock },
+  ];
+
   return (
-    <div className="min-h-screen text-white py-12">
+    <div className="min-h-screen text-white py-12 relative overflow-hidden">
+      {/* Animated background effects */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Header */}
+        <div className="text-center mb-12 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur border border-purple-500/30 rounded-full">
+            <Sparkles className="w-4 h-4 text-purple-400" />
+            <span className="text-sm text-gray-300">Knowledge Base</span>
+          </div>
+
+          <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              CheatVault
+            </span>
+          </h1>
+
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Your ultimate collection of tech guides, tricks, and solutions
+          </p>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Welcome to my collection of code snippets, tips, and resources from
+            my YouTube tutorials. Find helpful code examples and development
+            tricks mentioned in my videos, all in one place.
+          </p>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="bg-purple-500/20 p-3 rounded-lg group-hover:bg-purple-500/30 transition-colors">
+                  <stat.icon className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Search Section */}
         <div className="mb-12">
-          <div className="relative max-w-xl mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
-              <Search className="h-5 w-5 text-gray-400 opacity-100" />
+          <div className="relative max-w-xl mx-auto group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-xl opacity-20 group-hover:opacity-30 blur-lg transition-all duration-300" />
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                <Search className="h-5 w-5 text-purple-400" />
+              </div>
+              <input
+                type="text"
+                className="block w-full pl-12 pr-4 py-4 border border-purple-500/30 rounded-xl 
+                         bg-gray-800/50 backdrop-blur-sm focus:ring-2 focus:ring-purple-500 
+                         focus:border-purple-500/50 transition-all duration-200 ease-in-out
+                         placeholder:text-gray-400 text-white shadow-lg shadow-purple-500/10"
+                placeholder="Search topics..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-            <input
-              type="text"
-              className="block w-full pl-10 pr-3 py-3 border border-gray-700 rounded-xl 
-                       bg-gray-800/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 
-                       focus:border-transparent transition-all duration-200 ease-in-out
-                       placeholder:text-gray-400 text-white"
-              placeholder="Search topics..."
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                // Track search after a brief delay to avoid too many events
-                if (e.target.value.trim()) {
-                  setTimeout(() => {
-                    gtag.event({
-                      action: "search_topics",
-                      category: "engagement",
-                      label: e.target.value.trim(),
-                    });
-                  }, 1000);
-                }
-              }}
-            />
           </div>
         </div>
 
         {/* Topics Grid */}
         {filteredTopics.length === 0 ? (
           <div className="text-center py-12">
-            <div className="bg-gray-800/40 backdrop-blur-sm rounded-xl p-8 max-w-md mx-auto border border-gray-700/50">
-              <h3 className="text-xl font-semibold mb-2">No topics found</h3>
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-sm rounded-xl p-8 max-w-md mx-auto border border-purple-500/20 shadow-lg shadow-purple-500/10">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                No topics found
+              </h3>
               <p className="text-gray-400">
                 No topics match your search "{searchQuery}". Try different
                 keywords or check your spelling.
@@ -144,96 +201,103 @@ goto End
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
             {filteredTopics.map((topic) => (
-              <div
-                key={topic.id}
-                className="bg-gray-800/40 backdrop-blur-sm rounded-xl overflow-hidden 
-                       transition-all duration-300 ease-in-out hover:shadow-lg h-fit
-                       hover:shadow-blue-500/10 border border-gray-700/50"
-              >
-                {/* Topic Header */}
+              <div key={topic.id} className="relative group h-fit">
+                {/* Glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500" />
+
                 <div
-                  className="p-6 cursor-pointer"
-                  onClick={() => {
-                    const isExpanding = !expandedTopics.includes(topic.id);
-                    setExpandedTopics((prev) =>
-                      isExpanding
-                        ? [...prev, topic.id]
-                        : prev.filter((id) => id !== topic.id)
-                    );
-                    // Track topic expansion/collapse
-                    gtag.event({
-                      action: isExpanding ? "expand_topic" : "collapse_topic",
-                      category: "engagement",
-                      label: topic.title,
-                    });
-                  }}
+                  className="relative bg-gray-800/40 backdrop-blur-sm rounded-xl overflow-hidden 
+                             transition-all duration-300 ease-in-out hover:shadow-lg
+                             hover:shadow-purple-500/20 border border-purple-500/20 hover:border-purple-500/40"
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold">{topic.title}</h3>
-                    <button className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200">
-                      {expandedTopics.includes(topic.id) ? (
-                        <>
-                          Close
-                          <ChevronUp className="w-4 h-4" />
-                        </>
-                      ) : (
-                        <>
-                          Open
-                          <ChevronDown className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
+                  {/* Topic Header */}
+                  <div
+                    className="p-6 cursor-pointer"
+                    onClick={() => {
+                      setExpandedTopics((prev) =>
+                        prev.includes(topic.id)
+                          ? prev.filter((id) => id !== topic.id)
+                          : [...prev, topic.id]
+                      );
+                    }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors duration-200">
+                        {topic.title}
+                      </h3>
+                      <button className="flex items-center gap-1 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-200 min-w-fit ml-2">
+                        {expandedTopics.includes(topic.id) ? (
+                          <>
+                            Close
+                            <ChevronUp className="w-4 h-4" />
+                          </>
+                        ) : (
+                          <>
+                            Open
+                            <ChevronDown className="w-4 h-4" />
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className="text-gray-400">{topic.description}</p>
                   </div>
-                  <p className="text-gray-400">{topic.description}</p>
-                </div>
 
-                {/* Expanded Content */}
-                {expandedTopics.includes(topic.id) && (
-                  <div className="p-6 border-t border-gray-700/50 space-y-6 animate-fadeIn">
-                    {/* Text Content */}
-                    {topic.content.text && (
-                      <div className="text-gray-300">{topic.content.text}</div>
-                    )}
-
-                    {/* Code Block */}
-                    {topic.content.code && (
-                      <div className="relative">
-                        <div className="absolute right-2 top-2">
-                          <button
-                            onClick={() =>
-                              copyToClipboard(
-                                topic.content.code,
-                                topic.id,
-                                topic.title
-                              )
-                            }
-                            className="px-3 py-1 text-sm bg-blue-500/20 hover:bg-blue-500/30 
-                                   text-blue-300 rounded-md transition-colors duration-200
-                                   min-w-[60px]"
-                          >
-                            {copiedId === topic.id ? "Copied!" : "Copy"}
-                          </button>
+                  {/* Expanded Content */}
+                  {expandedTopics.includes(topic.id) && (
+                    <div className="p-6 border-t border-purple-500/20 space-y-6">
+                      {/* Text Content */}
+                      {topic.content.text && (
+                        <div className="text-gray-300 bg-purple-500/5 p-4 rounded-lg border border-purple-500/10">
+                          {topic.content.text}
                         </div>
-                        <pre className="bg-gray-900/50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                          <code>{topic.content.code}</code>
-                        </pre>
-                      </div>
-                    )}
+                      )}
 
-                    {/* Video Embed */}
-                    {topic.content.video && (
-                      <div className="relative pt-[56.25%]">
-                        <iframe
-                          className="absolute inset-0 w-full h-full rounded-lg"
-                          src={topic.content.video}
-                          title="Video content"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
+                      {/* Code Block */}
+                      {topic.content.code && (
+                        <div className="relative">
+                          <div className="absolute right-2 top-2 z-10">
+                            <button
+                              onClick={() =>
+                                copyToClipboard(
+                                  topic.content.code,
+                                  topic.id,
+                                  topic.title
+                                )
+                              }
+                              className="px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500
+                                     text-white rounded-lg transition-all duration-200 shadow-lg shadow-purple-500/30
+                                     min-w-[70px] font-medium"
+                            >
+                              {copiedId === topic.id ? "Copied!" : "Copy"}
+                            </button>
+                          </div>
+                          <div className="relative bg-gray-900/70 backdrop-blur border border-purple-500/20 rounded-lg overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5" />
+                            <pre className="relative p-4 font-mono text-sm overflow-x-auto">
+                              <code className="text-gray-300">
+                                {topic.content.code}
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Video Embed */}
+                      {topic.content.video && (
+                        <div className="relative pt-[56.25%] rounded-lg overflow-hidden border border-purple-500/20">
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" />
+                          <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src={topic.content.video}
+                            title="Video content"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
