@@ -1,34 +1,50 @@
 "use client";
 
 import Link from "next/link";
-// import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import Spinner from "./Spinner";
+import {
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
+  User,
+  Mail as MailIcon,
+  Phone,
+  MessageSquare,
+} from "lucide-react";
 
 export default function FormField() {
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
-  const [email, setEmail] = useState("");
-  const [contact, setContact] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
+  });
 
   const [isSending, setIsSending] = useState(false);
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
 
-  // const pathname = usePathname();
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   async function handleSubmit(event) {
     event.preventDefault();
     setIsSending(true);
-    setEmail("");
-    setName("");
-    setText("");
+    setStatus({ type: "", message: "" });
 
-    const formData = new FormData(event.target);
+    const submitData = new FormData(event.target);
+    submitData.append(
+      "access_key",
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    );
 
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
-
-    const object = Object.fromEntries(formData);
+    const object = Object.fromEntries(submitData);
     const json = JSON.stringify(object);
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -40,79 +56,172 @@ export default function FormField() {
       });
 
       const result = await response.json();
+
       if (result.success) {
-        // .log(result);
-        setMessage(
-          "Thank you for sending me your message. I will get in touch with you."
-        );
+        setStatus({
+          type: "success",
+          message:
+            "Message sent successfully! I'll get back to you within 24 hours.",
+        });
+        setFormData({ name: "", email: "", contact: "", message: "" });
       } else {
-        setMessage("Form Submission failed. Please try again.");
+        setStatus({
+          type: "error",
+          message: "Something went wrong. Please try again.",
+        });
       }
     } catch (error) {
-      console.log(error);
-      setMessage("There was an error Submitting the form");
+      console.error(error);
+      setStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
     } finally {
       setIsSending(false);
     }
   }
 
-  return (
-    <form onSubmit={handleSubmit} className="space-y-5 relative z-10 mt-20">
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-        name="name"
-        className="w-full placeholder:text-[#2F9AC9] font-medium p-4 rounded-xl outline-none ring-blue-600 text-[14px] text-stone-900 "
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        name="email"
-        className="w-full placeholder:text-[#2F9AC9] p-4 rounded-xl font-medium outline-none  text-[14px] focus:ring-offset-2 text-stone-900 "
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="tel"
-        placeholder="Contact"
-        name="tel"
-        className="w-full placeholder:text-[#2F9AC9] p-4 rounded-xl font-medium outline-none  text-[14px] focus:ring-offset-2 text-stone-900 "
-        value={contact}
-        onChange={(e) => setContact(e.target.value)}
-        required
-      />
-      <textarea
-        placeholder="Write a message"
-        className="w-full h-[130px] placeholder:text-[#2F9AC9] resize-none p-4 rounded-xl font-medium outline-none text-[14px] focus:ring-offset-2 text-stone-900"
-        value={text}
-        name="message"
-        onChange={(e) => setText(e.target.value)}
-      />
-      <button
-        type="submit"
-        disabled={!email || isSending || message}
-        className={`${
-          !email ? "cursor-not-allowed" : "cursor-pointer"
-        } w-full bg-[#38126D] text-white hover:bg-black py-2 transition-all duration-200 rounded-xl`}
-      >
-        {isSending ? <Spinner /> : "Submit"}
-      </button>
+  const isFormValid =
+    formData.name && formData.email && formData.contact && formData.message;
 
-      {message && (
-        <div className="absolute inset-0 bg-gray-300 rounded-xl bg-opacity-90 w-full  text-[#38126D] font-semibold h-full -translate-y-5 flex flex-col items-center justify-center space-y-2 ">
-          <p className="p-2 text-center text-[20px]">{message}</p>
-          <Link
-            href="/"
-            className="bg-[#B336FF] py-2 px-4 rounded-full text-white text-base"
-          >
-            Go back to Home
-          </Link>
+  return (
+    <div className="relative w-full max-w-lg mx-auto">
+      {/* Form - Hidden when status message is shown */}
+      <form
+        onSubmit={handleSubmit}
+        className={`space-y-6 transition-opacity duration-300 ${
+          status.message ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        {/* Name Field */}
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+            <User className="w-5 h-5 text-purple-400 group-focus-within:text-purple-300 transition-colors" />
+          </div>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            className="w-full bg-white/5 backdrop-blur border border-white/10 focus:border-purple-500/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder:text-gray-500 outline-none transition-all duration-300 focus:bg-white/10"
+            required
+          />
+        </div>
+
+        {/* Email Field */}
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+            <MailIcon className="w-5 h-5 text-purple-400 group-focus-within:text-purple-300 transition-colors" />
+          </div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="your.email@example.com"
+            className="w-full bg-white/5 backdrop-blur border border-white/10 focus:border-purple-500/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder:text-gray-500 outline-none transition-all duration-300 focus:bg-white/10"
+            required
+          />
+        </div>
+
+        {/* Phone Field */}
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+            <Phone className="w-5 h-5 text-purple-400 group-focus-within:text-purple-300 transition-colors" />
+          </div>
+          <input
+            type="tel"
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            placeholder="Your Phone Number"
+            className="w-full bg-white/5 backdrop-blur border border-white/10 focus:border-purple-500/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder:text-gray-500 outline-none transition-all duration-300 focus:bg-white/10"
+            required
+          />
+        </div>
+
+        {/* Message Field */}
+        <div className="relative group">
+          <div className="absolute z-10 top-4 left-0 pl-4 pointer-events-none">
+            <MessageSquare className="w-5 h-5 text-purple-400 group-focus-within:text-purple-300 transition-colors" />
+          </div>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Tell me about your project..."
+            rows={5}
+            className="w-full bg-white/5 backdrop-blur border border-white/10 focus:border-purple-500/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder:text-gray-500 outline-none transition-all duration-300 resize-none focus:bg-white/10"
+            required
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={!isFormValid || isSending}
+          className="group relative w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 disabled:shadow-none overflow-hidden"
+        >
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            {isSending ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                Send Message
+                <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </>
+            )}
+          </span>
+
+          {/* Button shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        </button>
+      </form>
+
+      {/* Success/Error Message Overlay - Positioned absolutely over the form */}
+      {status.message && (
+        <div className="absolute inset-0 min-h-[500px] bg-gradient-to-br from-purple-900/98 to-pink-900/98 backdrop-blur-xl rounded-2xl border border-purple-500/30 flex flex-col items-center justify-center p-8 z-50">
+          {status.type === "success" ? (
+            <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
+              <div className="bg-green-500/20 p-4 rounded-full mb-6 animate-bounce">
+                <CheckCircle className="w-16 h-16 text-green-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Message Sent!
+              </h3>
+              <p className="text-gray-300 text-center mb-8 max-w-md">
+                {status.message}
+              </p>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50"
+              >
+                Back to Home
+              </Link>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
+              <div className="bg-red-500/20 p-4 rounded-full mb-6">
+                <AlertCircle className="w-16 h-16 text-red-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Oops!</h3>
+              <p className="text-gray-300 text-center mb-8 max-w-md">
+                {status.message}
+              </p>
+              <button
+                onClick={() => setStatus({ type: "", message: "" })}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50"
+              >
+                Try Again
+              </button>
+            </div>
+          )}
         </div>
       )}
-    </form>
+    </div>
   );
 }

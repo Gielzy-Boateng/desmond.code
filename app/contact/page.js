@@ -1,62 +1,149 @@
 import FormField from "@/components/form-field";
 import WidthConstraint from "@/components/width-constraint";
+import { Mail, MessageCircle, Clock } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div className="mt-20 py-28 min-h-screen">
-      <WidthConstraint className="flex gap-y-8 text-xl font-semibold flex-col items-center justify-center">
-        <div className="mb-10 relative group">
-          {/* Glow effect behind video */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-full opacity-75 group-hover:opacity-100 blur-lg transition-all duration-500"></div>
-          <div className="relative">
-            <video
-              width="200"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-              preload="auto"
-              className="rounded-full ring-2 ring-white/20 transform group-hover:scale-105 transition-all duration-500"
-            >
-              <source src="/contact/time.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+    <div className="relative mt-20  min-h-screen overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl" />
+      </div>
 
-        <div className="space-y-6 max-w-3xl mx-auto text-center">
-          <h1
-            data-aos="zoom-in"
-            className="text-3xl md:text-2xl font-bold leading-tight bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
+      <WidthConstraint className="py-20 md:py-28">
+        <div className="flex flex-col items-center gap-12">
+          {/* Video Header */}
+          <div data-aos="zoom-in" className="relative group mb-4">
+            {/* Glow effects */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-full opacity-50 group-hover:opacity-75 blur-2xl transition-all duration-500 animate-pulse" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-600 rounded-full opacity-60 group-hover:opacity-80 blur-xl transition-all duration-500" />
+
+            {/* Video container */}
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full border-4 border-purple-500/30 group-hover:border-purple-500/50 transition-all duration-300" />
+              <video
+                width="200"
+                height="200"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+                preload="auto"
+                className="relative rounded-full transform group-hover:scale-105 transition-all duration-500"
+              >
+                <source src="/contact/time.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          {/* Main Heading */}
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1
+              data-aos="fade-up"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            >
+              <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+                Let&apos;s Create Something
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Extraordinary Together
+              </span>
+            </h1>
+
+            <p
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
+            >
+              Got a project in mind? The clock is ticking—let&apos;s turn your
+              vision into reality! ⏰
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="grid md:grid-cols-3 gap-6 w-full max-w-4xl mb-8"
           >
-            Hey there, welcome to my contact page! 🎉
-            <br className="" />
-            <span className="text-2xl md:text-2xl">
-              You&apos;ve made it—finally, the ticking clock says it&apos;s time
-              to make your move! ⏳
-            </span>
-          </h1>
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300">
+              <div className="bg-purple-500/20 p-3 rounded-lg w-fit mb-4">
+                <Clock className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Quick Response
+              </h3>
+              <p className="text-gray-400 text-sm">
+                I typically respond within 24 hours
+              </p>
+            </div>
 
-          <div className="space-y-3">
-            <p
-              data-aos="zoom-in"
-              className="text-2xl bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-200 bg-clip-text text-transparent font-bold"
-            >
-              Got a project, an idea, or want to hire Me?
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300">
+              <div className="bg-pink-500/20 p-3 rounded-lg w-fit mb-4">
+                <MessageCircle className="w-6 h-6 text-pink-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Free Consultation
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Let&apos;s discuss your project needs
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur border border-purple-500/20 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300">
+              <div className="bg-blue-500/20 p-3 rounded-lg w-fit mb-4">
+                <Mail className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Direct Contact
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Get straight to the point with me
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Text */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="text-center space-y-3 mb-4"
+          >
+            <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-200 bg-clip-text text-transparent">
+              Ready to start your project?
             </p>
-            <p
-              data-aos="zoom-in"
-              className="text-xl bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-200 bg-clip-text text-transparent font-bold"
-            >
-              Don&apos;t wait too long—let&apos;s connect and make something
-              incredible happen!
+            <p className="text-lg md:text-xl text-gray-300">
+              Fill out the form below and let&apos;s make something incredible
+              happen! 🚀
             </p>
           </div>
-        </div>
 
-        <div className="w-full max-w-2xl mx-auto mt-4"></div>
-        <FormField />
+          {/* Form */}
+          <div data-aos="fade-up" data-aos-delay="400" className="w-full">
+            <FormField />
+          </div>
+
+          {/* Additional Contact Info */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="text-center space-y-2 pt-8 border-t border-white/10 w-full max-w-lg"
+          >
+            <p className="text-sm text-gray-400">Prefer email?</p>
+
+            <a
+              href="mailto:desmondboateng483@gmail.com"
+              className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
+            >
+              desmondboateng483@gmail.com
+            </a>
+          </div>
+        </div>
       </WidthConstraint>
     </div>
   );
