@@ -92,10 +92,10 @@ export default function About() {
       {/* Story Section */}
       <div className="max-w-4xl mx-auto space-y-8 text-lg text-gray-300 leading-relaxed">
         <p data-aos="fade-up">
-          From science labs to software engineering—my path wasn't traditional,
-          but it taught me to approach problems systematically and think
-          critically. What started as curiosity turned into a career building
-          scalable web and mobile applications.
+          From science labs to software engineering—my path wasn&apos;t
+          traditional, but it taught me to approach problems systematically and
+          think critically. What started as curiosity turned into a career
+          building scalable web and mobile applications.
         </p>
 
         <p data-aos="fade-up" data-aos-delay="100">
@@ -103,9 +103,9 @@ export default function About() {
           <strong className="text-white">modern JavaScript ecosystem</strong>
           —React, Next.js, Vue, Nuxt.js, TypeScript—combined with{" "}
           <strong className="text-white">Flutter</strong> for cross-platform
-          mobile development. Whether it's architecting a performant frontend,
-          integrating complex APIs, or crafting pixel-perfect UI, I focus on
-          solutions that are both elegant and maintainable.
+          mobile development. Whether it&apos;s architecting a performant
+          frontend, integrating complex APIs, or crafting pixel-perfect UI, I
+          focus on solutions that are both elegant and maintainable.
         </p>
 
         <div
@@ -133,9 +133,9 @@ export default function About() {
 
         <p data-aos="fade-up" data-aos-delay="300">
           Beyond writing code, I care about the <em>why</em> behind what I
-          build. I've worked with startups racing to launch MVPs and established
-          companies optimizing for scale. Each project has sharpened my ability
-          to balance speed with quality, innovation with reliability.
+          build. I&apos;ve worked with startups racing to launch MVPs and
+          established companies optimizing for scale. Each project has sharpened
+          my ability to balance speed with quality, innovation with reliability.
         </p>
       </div>
 
