@@ -39,14 +39,14 @@ export const metadata = {
     canonical: "https://juizycode.vip",
   },
   openGraph: {
-    title: "JuizyCode - Premium Code Guides & Tech Tutorials",
+    title: "JuizyCode | Full-Stack Developer",
     description:
       "Software Engineer skilled in web and mobile app development using React, Next.js, Flutter, and more. Access exclusive coding guides, tech tricks, and developer resources. Your VIP destination for premium programming content.",
     url: "https://juizycode.vip",
     siteName: "JuizyCode",
     images: [
       {
-        url: "/Brand Logo.png", // You'll need to create this
+        url: "/og-image.png", // You'll need to create this
         width: 1200,
         height: 630,
         alt: "JuizyCode - Premium Code Guides",
@@ -60,7 +60,7 @@ export const metadata = {
     title: "JuizyCode - Premium Code Guides & Tech Tutorials",
     description:
       "Access exclusive coding guides, tech tricks, and developer resources.",
-    images: ["Brand Logo.png"],
+    images: ["og-image.png"],
     creator: "https://x.com/otumfuor_nana1?s=21", // Replace with your actual Twitter handle
   },
   robots: {

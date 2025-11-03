@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "JuizyCode",
     images: [
       {
-        url: "/Brand Logo.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Contact JuizyCode - Web & Mobile Development",
@@ -42,7 +42,7 @@ export const metadata = {
     title: "Contact JuizyCode - Let's Create Something Extraordinary",
     description:
       "Get in touch for your next big project. Free consultation available.",
-    images: ["Brand Logo.png"],
+    images: ["og-image.png"],
     creator: "https://x.com/otumfuor_nana1?s=21",
   },
   robots: {
