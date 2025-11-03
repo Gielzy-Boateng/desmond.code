@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "JuizyCode",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://juizycode.vip/og-image.png",
         width: 1200,
         height: 630,
         alt: "JuizyCode - Full-Stack Developer Journey",
@@ -43,8 +43,8 @@ export const metadata = {
     card: "summary_large_image",
     title: "About JuizyCode - Journey of a Full-Stack Developer",
     description: "From science labs to software engineering - my tech journey.",
-    images: ["og-image.png"],
-    creator: "https://x.com/otumfuor_nana1?s=21",
+    images: ["/og-image.png"],
+    creator: "@otumfuor_nana1",
   },
   robots: {
     index: true,

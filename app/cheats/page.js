@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "JuizyCode",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://juizycode.vip/og-image.png",
         width: 1200,
         height: 630,
         alt: "JuizyCode - Developer Resources & Code Snippets",
@@ -44,8 +44,8 @@ export const metadata = {
     title: "Code Cheat Vault - JuizyCode Developer Resources",
     description:
       "Access code snippets and developer resources from YouTube tutorials.",
-    images: ["og-image.png"],
-    creator: "https://x.com/otumfuor_nana1?s=21",
+    images: ["/og-image.png"],
+    creator: "@otumfuor_nana1",
   },
   robots: {
     index: true,

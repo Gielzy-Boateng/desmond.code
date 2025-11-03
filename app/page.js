@@ -24,7 +24,7 @@ export const metadata = {
     siteName: "JuizyCode",
     images: [
       {
-        url: "/Brand Logo.png",
+        url: "https://juizycode.vip/og-image.png",
         width: 1200,
         height: 630,
         alt: "JuizyCode - Premium Code Guides",
@@ -38,8 +38,8 @@ export const metadata = {
     title: "JuizyCode - Premium Code Guides & Tech Tutorials",
     description:
       "Access exclusive coding guides, tech tricks, and developer resources.",
-    images: ["Brand Logo.png"],
-    creator: "https://x.com/otumfuor_nana1?s=21",
+    images: ["/og-image.png"],
+    creator: "@otumfuor_nana1",
   },
   robots: {
     index: true,

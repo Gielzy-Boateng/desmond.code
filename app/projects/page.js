@@ -10,66 +10,6 @@ import { motion } from "framer-motion";
 // import { useRef } from "react";
 // import { useInView } from "framer-motion";
 
-export const metadata = {
-  title: "Projects | JuizyCode - Portfolio Showcase",
-  description:
-    "Explore JuizyCode's portfolio of innovative web and mobile applications. From logistics platforms to e-learning solutions, discover projects crafted with passion and built with precision.",
-  keywords:
-    "portfolio projects, web applications, mobile apps, software development portfolio, React projects, Next.js projects, Flutter applications, full-stack development, case studies, tech portfolio,",
-  authors: [{ name: "JuizyCode" }],
-  creator: "JuizyCode",
-  publisher: "JuizyCode",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://juizycode.vip"),
-  alternates: {
-    canonical: "https://juizycode.vip/projects",
-  },
-  openGraph: {
-    title: "JuizyCode Portfolio - Innovative Digital Solutions",
-    description:
-      "Discover a collection of innovative web and mobile applications. From logistics platforms to e-learning solutions, explore projects that demonstrate technical excellence and creative problem-solving.",
-    url: "https://juizycode.vip/projects",
-    siteName: "JuizyCode",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Contact JuizyCode - Web & Mobile Development",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JuizyCode Portfolio - Innovative Digital Solutions",
-    description:
-      "Explore a showcase of web and mobile applications built with modern technologies and creative excellence.",
-    images: ["og-image.png"],
-    creator: "https://x.com/otumfuor_nana1?s=21",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google:
-      "google-site-verification=Fd0kIALRMGAE38m_5pLrZcYk13TBjCia9sdfFyn9X0s",
-  },
-};
-
 export default function Projects() {
   // const ref = useRef(null);
   // const isInView = useInView(ref, { once: false, margin: "-100px" });
