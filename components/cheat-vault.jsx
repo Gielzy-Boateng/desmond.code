@@ -205,7 +205,7 @@ set "cmd=%~2"
 powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('%msg%')} Catch{}"
 start "" %cmd%
 goto :eof`,
-        video: "https://youtu.be/RB-YHc_15kM?si=_zSNW-SFanbPqMHi",
+        video: "https://www.youtube.com/embed/RB-YHc_15kM",
       },
     },
   ];
