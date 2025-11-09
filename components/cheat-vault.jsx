@@ -62,6 +62,7 @@ goto End
         video: "",
       },
     },
+
     {
       id: 2,
       title:
@@ -75,7 +76,138 @@ goto End
         video: "/videos/download-video-guide.mp4",
       },
     },
-    // Add more topics here
+    {
+      id: 3,
+      title: "Create Your Own JARVIS AI Assistant - Full Tutorial (Batch File)",
+      description:
+        "🤖 Build your own JARVIS AI assistant using a simple batch file!",
+      content: {
+        text: "Control your PC with voice feedback and a custom menu system - just like Tony Stark's AI assistant.",
+        code: `@echo off
+title Jarvis Control Center
+color 0a
+cls
+:: ============================
+:: Jarvis Robot Logo
+:: ============================
+echo.
+echo          .-"""-.
+echo         /       \
+echo        ^|  O   O  ^|
+echo        ^|    ^>    ^|
+echo        ^|  \___/  ^|
+echo         \_______/
+echo          ^|^|   ^|^|
+echo         ^^^^^^^^^^
+echo.
+echo      JARVIS AI ASSISTANT
+echo.
+echo.
+:: ============================
+:: Welcome speech (safe)
+:: ============================
+powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('Heyy! Welcome to Jarvis, your personal assistant!')} Catch {Write-Host 'TTS not available.'}"
+:: ============================
+:: Short initialization animation
+:: ============================
+echo Initializing Jarvis...
+for /l %%i in (1,1,5) do (
+    set /p="█" <nul
+    ping -n 2 127.0.0.1 >nul
+)
+echo Done!
+pause
+cls
+:menu
+cls
+color 0a
+echo ================= Jarvis Control Center =================
+echo.
+echo 1. Open Notepad
+echo 2. Open Calculator
+echo 3. Open Google Chrome
+echo 4. Open Downloads Folder
+echo 5. Open Documents Folder
+echo 6. Open Desktop
+echo 7. Task Manager
+echo 8. Command Prompt
+echo 9. Open YouTube
+echo 10. Open File Explorer
+echo 11. Shutdown PC
+echo 12. Restart PC
+echo 13. Exit
+echo.
+set /p choice=Choose an option [1-13]: 
+:: ============================
+:: Menu actions with safe TTS
+:: ============================
+if "%choice%"=="1" (
+    call :SpeakAndRun "Opening Notepad" "notepad"
+    goto menu
+)
+if "%choice%"=="2" (
+    call :SpeakAndRun "Opening Calculator" "calc"
+    goto menu
+)
+if "%choice%"=="3" (
+    call :SpeakAndRun "Opening Google Chrome" "chrome.exe"
+    goto menu
+)
+if "%choice%"=="4" (
+    call :SpeakAndRun "Opening Downloads folder" "%USERPROFILE%\Downloads"
+    goto menu
+)
+if "%choice%"=="5" (
+    call :SpeakAndRun "Opening Documents folder" "%USERPROFILE%\Documents"
+    goto menu
+)
+if "%choice%"=="6" (
+    call :SpeakAndRun "Opening Desktop" "%USERPROFILE%\Desktop"
+    goto menu
+)
+if "%choice%"=="7" (
+    call :SpeakAndRun "Opening Task Manager" "taskmgr"
+    goto menu
+)
+if "%choice%"=="8" (
+    call :SpeakAndRun "Opening Command Prompt" "cmd"
+    goto menu
+)
+if "%choice%"=="9" (
+    call :SpeakAndRun "Opening YouTube" "https://www.youtube.com"
+    goto menu
+)
+if "%choice%"=="10" (
+    call :SpeakAndRun "Opening File Explorer" "explorer.exe"
+    goto menu
+)
+if "%choice%"=="11" (
+    powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('Shutting down PC in 10 seconds')} Catch{}"
+    shutdown /s /t 10
+    goto menu
+)
+if "%choice%"=="12" (
+    powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('Restarting PC in 10 seconds')} Catch{}"
+    shutdown /r /t 10
+    goto menu
+)
+if "%choice%"=="13" (
+    powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('Goodbye, have a nice day!')} Catch{}"
+    exit
+)
+goto menu
+:: ============================
+:: Function: SpeakAndRun
+:: ============================
+:SpeakAndRun
+set "msg=%~1"
+set "cmd=%~2"
+powershell -Command "Try {Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('%msg%')} Catch{}"
+start "" %cmd%
+goto :eof`,
+        video: "/videos/download-video-guide.mp4",
+      },
+    },
   ];
 
   const filteredTopics = topics.filter(
@@ -255,7 +387,7 @@ goto End
                       {/* Code Block */}
                       {topic.content.code && (
                         <div className="relative">
-                          <div className="absolute right-2 top-2 z-10">
+                          <div className="absolute right-4 top-2 z-10">
                             <button
                               onClick={() =>
                                 copyToClipboard(
@@ -273,7 +405,7 @@ goto End
                           </div>
                           <div className="relative bg-gray-900/70 backdrop-blur border border-purple-500/20 rounded-lg overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5" />
-                            <pre className="relative p-4 font-mono text-sm overflow-x-auto">
+                            <pre className="relative p-4 font-mono text-sm overflow-x-auto overflow-y-auto max-h-44">
                               <code className="text-gray-300">
                                 {topic.content.code}
                               </code>
