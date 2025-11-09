@@ -70,8 +70,55 @@ goto End
       description: " step-by-step how to use yt-dlp and FFmpeg",
       content: {
         text: "two powerful, open-source tools — to download, merge, and save videos directly to your computer.",
-        code: `# Install yt-dlp and FFmpeg
-# For Windows, download executables from their official sites and add them to your PATH.
+        code: `@echo off
+title yt-dlp Downloader
+color 0a
+
+:menu
+cls
+echo ================================================
+echo            YT-DLP DOWNLOAD MENU
+echo ================================================
+echo 1. Download single video (best quality, MP4)
+echo 2. Download audio only (MP3)
+echo 3. Download entire playlist (best quality, MP4)
+echo 4. Update yt-dlp to latest version
+echo 5. Exit
+echo ================================================
+set /p choice=Choose an option (1-5): 
+
+if "%choice%"=="1" goto single
+if "%choice%"=="2" goto audio
+if "%choice%"=="3" goto playlist
+if "%choice%"=="4" goto update
+if "%choice%"=="5" exit
+
+:single
+cls
+set /p url=Enter video URL: 
+yt-dlp -f "bv*+ba/b" --merge-output-format mp4 "%url%"
+pause
+goto menu
+
+:audio
+cls
+set /p url=Enter video URL: 
+yt-dlp -x --audio-format mp3 "%url%"
+pause
+goto menu
+
+:playlist
+cls
+set /p url=Enter playlist URL: 
+yt-dlp -f "bv*+ba/b" --merge-output-format mp4 -o "%%(playlist_index)s - %%(title)s.%%(ext)s" "%url%"
+pause
+goto menu
+
+:update
+cls
+yt-dlp -U
+pause
+goto menu
 `,
         video: "/videos/download-video-guide.mp4",
       },
