@@ -44,7 +44,7 @@ export const metadata = {
     title: "Code Cheat Vault - JuizyCode Developer Resources",
     description:
       "Access code snippets and developer resources from YouTube tutorials.",
-    images: ["/og-image.png"],
+    images: ["https://juizycode.vip/og-image.png"],
     creator: "@otumfuor_nana1",
   },
   robots: {

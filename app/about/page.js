@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "About JuizyCode - Journey of a Full-Stack Developer",
     description: "From science labs to software engineering - my tech journey.",
-    images: ["/og-image.png"],
+    images: ["https://juizycode.vip/og-image.png"],
     creator: "@otumfuor_nana1",
   },
   robots: {

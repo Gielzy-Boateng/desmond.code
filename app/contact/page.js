@@ -42,7 +42,7 @@ export const metadata = {
     title: "Contact JuizyCode - Let's Create Something Extraordinary",
     description:
       "Get in touch for your next big project. Free consultation available.",
-    images: ["/og-image.png"],
+    images: ["https://juizycode.vip/og-image.png"],
     creator: "@otumfuor_nana1",
   },
   robots: {

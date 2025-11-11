@@ -46,7 +46,7 @@ export const metadata = {
     siteName: "JuizyCode",
     images: [
       {
-        url: "/og-image.png", // You'll need to create this
+        url: "https://juizycode.vip/og-image.png",
         width: 1200,
         height: 630,
         alt: "JuizyCode - Premium Code Guides",
@@ -60,8 +60,8 @@ export const metadata = {
     title: "JuizyCode - Premium Code Guides & Tech Tutorials",
     description:
       "Access exclusive coding guides, tech tricks, and developer resources.",
-    images: ["og-image.png"],
-    creator: "https://x.com/otumfuor_nana1?s=21", // Replace with your actual Twitter handle
+    images: ["https://juizycode.vip/og-image.png"],
+    creator: "@otumfuor_nana1", // Replace with your actual Twitter handle
   },
   robots: {
     index: true,

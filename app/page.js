@@ -38,7 +38,7 @@ export const metadata = {
     title: "JuizyCode - Premium Code Guides & Tech Tutorials",
     description:
       "Access exclusive coding guides, tech tricks, and developer resources.",
-    images: ["/og-image.png"],
+    images: ["https://juizycode.vip/og-image.png"],
     creator: "@otumfuor_nana1",
   },
   robots: {
