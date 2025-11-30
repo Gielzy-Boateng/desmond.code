@@ -379,7 +379,7 @@ echo !str!
 endlocal
 exit /b
 `,
-        video: "https://www.youtube.com/embed/RB-YHc_15kM",
+        video: "https://www.youtube.com/embed/Ga_zPe3O264",
       },
     },
   ];
