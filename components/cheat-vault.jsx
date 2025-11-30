@@ -255,6 +255,133 @@ goto :eof`,
         video: "https://www.youtube.com/embed/RB-YHc_15kM",
       },
     },
+    {
+      id: 4,
+      title: "ULTRA HACKER TERMINAL - Batch File Tutorial (2024)",
+      description: "FAKE HACKER TERMINAL ANIMATION",
+      content: {
+        text: "Build your own ultra-realistic hacker terminal simulation using just a batch file. Perfect for pranks or fun coding projects!",
+        code: `@echo off
+title HACKER TERMINAL // ACCESS NODE-01
+color 0a
+mode 110,30
+
+:: =========================================
+:: ASCII HACKER LOGO
+:: =========================================
+cls
+echo.
+echo             ███╗   ██╗ █████╗ ██████╗ ███████╗██████╗     
+echo             ████╗  ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗    
+echo             ██╔██╗ ██║███████║██████╔╝█████╗  ██║  ██║    
+echo             ██║╚██╗██║██╔══██║██╔══██╗██╔══╝  ██║  ██║    
+echo             ██║ ╚████║██║  ██║██████╔╝███████╗██████╔╝    
+echo             ╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝     
+echo                     [ H A C K E R   A C C E S S ]          
+echo.
+timeout /t 2 >nul
+
+:: =========================================
+:: STARTUP LOADING BAR
+:: =========================================
+echo Initializing terminal...
+call :bar
+echo Loading modules...
+call :bar
+echo Establishing secure node link...
+call :bar
+cls
+
+:: =========================================
+:: SYSTEM SCAN
+:: =========================================
+echo Running system diagnostic scan...
+ping -n 2 localhost >nul
+echo [OK] Memory Status: Secure
+ping -n 2 localhost >nul
+echo [OK] Kernel Integrity: Verified
+ping -n 2 localhost >nul
+echo [OK] Firewall Layer: Weak
+ping -n 2 localhost >nul
+echo.
+echo Attempting firewall breach...
+call :bar
+echo FIREWALL BREACHED SUCCESSFULLY.
+echo.
+timeout /t 2 >nul
+cls
+
+:: =========================================
+:: PASSWORD CRACKING SIMULATION
+:: =========================================
+echo Attempting password decryption...
+set "charset=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+for /L %%i in (1,1,35) do (
+    set "pw="
+    for /L %%x in (1,1,12) do (
+        set /a rnd=%random% %% 36
+        for %%c in (!rnd!) do set "pw=!pw!!charset:~%%c,1!"
+    )
+    echo Decrypting: %%i/35  —  [!pw!]
+    ping -n 1 localhost >nul
+)
+echo PASSWORD DECRYPTED: ACCESS GRANTED
+timeout /t 2 >nul
+cls
+
+:: =========================================
+:: MATRIX RAIN EFFECT
+:: =========================================
+:MATRIX
+set /a rand=%random% %% 2
+if %rand%==0 (
+    call :line
+) else (
+    call :line2
+)
+goto MATRIX
+
+:: =========================================
+:: FUNCTIONS
+:: =========================================
+:bar
+setlocal enabledelayedexpansion
+set "bar="
+for /L %%i in (1,1,30) do (
+    set "bar=!bar!█"
+    echo !bar!
+    ping -n 1 localhost >nul
+)
+endlocal
+exit /b
+
+:line
+setlocal enabledelayedexpansion
+set "charset=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+set "str="
+for /L %%i in (1,1,50) do (
+    set /a rnd=%random% %% 36
+    set "str=!str!!charset:~%rnd%,1!"
+)
+echo !str!
+endlocal
+exit /b
+
+:line2
+setlocal enabledelayedexpansion
+set "charset=abcdefghijklmnopqrstuvwxyz0123456789"
+set "str="
+for /L %%i in (1,1,50) do (
+    set /a rnd=%random% %% 36
+    set "str=!str!!charset:~%rnd%,1!"
+)
+echo !str!
+endlocal
+exit /b
+`,
+        video: "https://www.youtube.com/embed/RB-YHc_15kM",
+      },
+    },
   ];
 
   const filteredTopics = topics.filter(
