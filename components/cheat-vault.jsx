@@ -257,7 +257,7 @@ goto :eof`,
     },
     {
       id: 4,
-      title: "ULTRA HACKER TERMINAL - Batch File Tutorial (2024)",
+      title: "ULTRA HACKER TERMINAL - Batch File Tutorial (2025)",
       description: "FAKE HACKER TERMINAL ANIMATION",
       content: {
         text: "Build your own ultra-realistic hacker terminal simulation using just a batch file. Perfect for pranks or fun coding projects!",
@@ -378,6 +378,71 @@ for /L %%i in (1,1,50) do (
 echo !str!
 endlocal
 exit /b
+`,
+        video: "https://www.youtube.com/embed/Ga_zPe3O264",
+      },
+    },
+    {
+      id: 5,
+      title: "Desktiop Auto Organizer - Batch File Tutorial (2025",
+      description: "Automate Desktop Cleanup",
+      content: {
+        text: "Build a batch file that automatically organizes your desktop files into categorized folders like Images, Videos, Documents, and more with just a double-click.",
+        code: `@echo off
+title Desktop Auto Organizer
+color 0A
+
+echo ============================================
+echo        DESKTOP AUTO ORGANIZER v2.0
+echo ============================================
+echo.
+echo Cleaning and organizing your Desktop...
+echo.
+
+set "desk=%USERPROFILE%\Desktop"
+cd "%desk%"
+
+mkdir Images Videos Documents Music Programs Others >nul 2>&1
+
+echo Sorting Images...
+move *.jpg Images >nul 2>&1
+move *.jpeg Images >nul 2>&1
+move *.png Images >nul 2>&1
+move *.gif Images >nul 2>&1
+move *.bmp Images >nul 2>&1
+
+echo Sorting Videos...
+move *.mp4 Videos >nul 2>&1
+move *.mov Videos >nul 2>&1
+move *.avi Videos >nul 2>&1
+move *.mkv Videos >nul 2>&1
+
+echo Sorting Documents...
+move *.pdf Documents >nul 2>&1
+move *.docx Documents >nul 2>&1
+move *.doc Documents >nul 2>&1
+move *.txt Documents >nul 2>&1
+move *.xlsx Documents >nul 2>&1
+
+echo Sorting Music...
+move *.mp3 Music >nul 2>&1
+move *.wav Music >nul 2>&1
+move *.aac Music >nul 2>&1
+
+echo Sorting Programs...
+move *.exe Programs >nul 2>&1
+move *.msi Programs >nul 2>&1
+
+echo Sorting Everything Else...
+for %%f in (*.*) do (
+    if not "%%~xf"=="" move "%%f" Others >nul 2>&1
+)
+
+echo.
+echo ============================================
+echo         ✔ Desktop is now clean!
+echo ============================================
+pause
 `,
         video: "https://www.youtube.com/embed/Ga_zPe3O264",
       },
