@@ -444,7 +444,7 @@ echo         ✔ Desktop is now clean!
 echo ============================================
 pause
 `,
-        video: "https://www.youtube.com/embed/Ga_zPe3O264",
+        video: "https://www.youtube.com/embed/iQ0v2G7QW_s",
       },
     },
   ];
